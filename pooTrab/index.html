@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rede Sigma Software System</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Estilo para a barra de pesquisa fixa */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: white;
+            padding: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        /* Margem para o conteúdo, para que não fique por baixo da barra fixa */
+        .content {
+            margin-top: 60px; /* Ajuste conforme a altura da barra de pesquisa */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Barra lateral -->
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="logo.png" alt="Logo Rede Sigma">
+                <h2>Rede Sigma Software System</h2>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#controle-veiculos">Controle de Veículos</a></li>
+                    <li><a href="#controle-compras">Controle de Compras</a></li>
+                    <li><a href="#controle-vendas">Controle de Vendas</a></li>
+                    <li><a href="#controle-pedidos">Controle de Pedidos</a></li>
+                    <li><a href="#controle-clientes">Controle de Clientes</a></li>
+                    <li><a href="#controle-vendedores">Controle de Vendedores</a></li>
+                    <li><a href="#controle-montadoras">Controle de Montadoras</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Conteúdo principal -->
+        <main>
+            <!-- Barra superior -->
+            <header class="header">
+                <input type="text" placeholder="Pesquisar...">
+            </header>
+
+            <!-- Conteúdo dinâmico com seções -->
+            <div class="content">
+                <section id="controle-veiculos">
+                    <h2>Controle de Veículos</h2>
+                    <button class="btn">Alterar Veículos</button>
+                    <button class="btn btn-primary">Adicionar Veículos</button>
+                    <div class="item">
+                        <img src="car-icon.png" alt="Veículo 1">
+                        <p>Veículo 1<br>Marca: XYZ</p>
+                    </div>
+                    <div class="item">
+                        <img src="car-icon.png" alt="Veículo 2">
+                        <p>Veículo 2<br>Marca: ABC</p>
+                    </div>
+                </section>
+                
+                <section id="controle-compras">
+                    <h2>Controle de Compras</h2>
+                    <button class="btn">Alterar clientes</button>
+                    <button class="btn btn-primary">Adicionar Cliente</button>
+                    <div class="item">
+                        <img src="client-icon.png" alt="Cliente 1">
+                        <p>Compra 1<br>End: XYZ</p>
+                    </div>
+                    <div class="item">
+                        <img src="client-icon.png" alt="Cliente 2">
+                        <p>Compra 2<br>End: XYZ</p>
+                    </div>
+                </section>
+
+                <section id="controle-vendas">
+                    <h2>Controle de Vendas</h2>
+                    <button class="btn">Alterar Clientes</button>
+                    <button class="btn btn-primary">Adicionar Venda</button>
+                    <div class="item">
+                        <p>Venda 1<br>CPF: 123456<br>End: XYZ</p>
+                    </div>
+                    <div class="item">
+                        <p>Venda 2<br>CPF: 654321<br>End: XYZ</p>
+                    </div>
+                </section>
+                
+                <section id="controle-pedidos">
+                    <h2>Controle de Pedidos</h2>
+                    <button class="btn">Alterar Pedidos</button>
+                    <button class="btn btn-primary">Adicionar Pedido</button>
+                    <div class="item">
+                        <p>Pedido 1<br>Valor: 12345円<br>End: XYZ</p>
+                    </div>
+                    <div class="item">
+                        <p>Pedido 2<br>Valor: 654321円<br>End: XYZ</p>
+                    </div>
+                </section>
+                
+                <section id="controle-clientes">
+                    <h2>Controle de Clientes</h2>
+                    <button class="btn">Alterar Clientes</button>
+                    <button class="btn btn-primary">Adicionar Cliente</button>
+                    <div class="item">
+                        <p>Cliente 1<br>CPF: 123456</p>
+                    </div>
+                    <div class="item">
+                        <p>Cliente 2<br>CPF: 654321</p>
+                    </div>
+                </section>
+                
+                <section id="controle-vendedores">
+                    <h2>Controle de Vendedores</h2>
+                    <button class="btn">Alterar Vendedores</button>
+                    <button class="btn btn-primary">Adicionar Vendedor</button>
+                    <div class="item">
+                        <p>Vendedor 1<br>Nome: User A</p>
+                    </div>
+                    <div class="item">
+                        <p>Vendedor 2<br>Nome: User B</p>
+                    </div>
+                </section>
+                
+                <section id="controle-montadoras">
+                    <h2>Controle de Montadoras</h2>
+                    <button class="btn">Alterar Montadoras</button>
+                    <button class="btn btn-primary">Adicionar Montadora</button>
+                    <div class="item">
+                        <p>Montadora 1<br>Nome: Montadoras 001</p>
+                    </div>
+                    <div class="item">
+                        <p>Montadora 2<br>Nome: Montadoras 002</p>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- Link para o arquivo JavaScript externo -->
+    <script src="script.js"></script>
+</body>
+</html>
