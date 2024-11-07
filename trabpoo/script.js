@@ -1,3 +1,4 @@
+// Rolagem suave para links da barra lateral
 document.addEventListener('DOMContentLoaded', () => {
     const links = document.querySelectorAll('.sidebar a');
     links.forEach(link => {
@@ -14,43 +15,43 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
-// Função para mostrar o formulário de adicionar veículo
-function mostrarFormulario() {
-    document.getElementById("adicionar-veiculo").style.display = "block";
+
+// Função para mostrar o formulário de adicionar
+function mostrarFormulario(formId) {
+    document.getElementById(formId).style.display = "block";
 }
 
-// Função para esconder o formulário de adicionar veículo
-function fecharFormulario() {
-    document.getElementById("adicionar-veiculo").style.display = "none";
+// Função para esconder o formulário de adicionar
+function fecharFormulario(formId) {
+    document.getElementById(formId).style.display = "none";
 }
 
-// Ativa a função ao clicar no botão "Adicionar Veículos"
-document.querySelector(".btn-primary").addEventListener("click", mostrarFormulario);
-// Função para mostrar o formulário de editar veículo
+// Função para alternar entre formulário de adicionar e editar para Veículos
 function mostrarEdicaoVeiculo() {
     document.getElementById("editar-veiculo").style.display = "block";
     document.getElementById("adicionar-veiculo").style.display = "none"; // Oculta o formulário de adicionar
 }
 
-// Função para esconder o formulário de editar veículo
-function fecharEdicao() {
-    document.getElementById("editar-veiculo").style.display = "none";
-}
-
-// Função para mostrar o formulário de adicionar veículo
 function mostrarAdicionarVeiculo() {
     document.getElementById("adicionar-veiculo").style.display = "block";
     document.getElementById("editar-veiculo").style.display = "none"; // Oculta o formulário de edição
 }
 
-// Função para esconder o formulário de adicionar veículo
-function fecharFormulario() {
-    document.getElementById("adicionar-veiculo").style.display = "none";
-}
-
-// Event listener para o botão "Alterar Veículos"
+// Event listeners para os botões de "Adicionar" e "Alterar" nas seções de Veículos
+document.querySelector(".btn-primary").addEventListener("click", () => mostrarFormulario('adicionar-veiculo'));
 document.querySelector(".btn-alterar-veiculo").addEventListener("click", mostrarEdicaoVeiculo);
 
-// Event listener para o botão "Adicionar Veículos"
-document.querySelector(".btn-primary").addEventListener("click", mostrarAdicionarVeiculo);
+// Para outros controles (Compras, Vendas, etc.), adaptando para exibir e ocultar formulários específicos
+document.querySelectorAll('.btn-adicionar').forEach(button => {
+    button.addEventListener("click", (e) => {
+        const sectionId = e.target.getAttribute('data-section');
+        mostrarFormulario(`form-${sectionId}`);
+    });
+});
 
+document.querySelectorAll('.btn-fechar').forEach(button => {
+    button.addEventListener("click", (e) => {
+        const sectionId = e.target.getAttribute('data-section');
+        fecharFormulario(`form-${sectionId}`);
+    });
+});
