@@ -34,6 +34,7 @@
     background-color: #f0f0f0;
     padding: 20px;
     border-right: 1px solid #ddd;
+    align-items: right;
 }
 
 .sidebar .logo {
@@ -245,8 +246,9 @@ main {
 }
 .section {
     display: flex;
-      justify-content: center;
-      align-items: center;
+    align-items: right
+      justify-content: right;
+      /*align-items: center;*/
       min-height: 100vh; /* Garante que o body ocupe toda a altura da janela */
       margin: 0; 
 }
