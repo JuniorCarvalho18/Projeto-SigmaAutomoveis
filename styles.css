@@ -244,5 +244,9 @@ main {
     color: #fff;
 }
 .section {
-    
+    display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh; /* Garante que o body ocupe toda a altura da janela */
+      margin: 0; 
 }
