@@ -18,7 +18,7 @@
 .content {
     display: flex;
      justify-content: right;
-    align-items: right;
+    align-items: center;
     padding: 48px;
     border: 1px solid #cccccc00;
     border-radius: 5px;
@@ -100,14 +100,14 @@ main {
 .content section {
      display: flex;
      justify-content: right;
-    align-items: right;
+    align-items: center;
     margin-bottom: 40px;
 }
 
 .content section h2 {
      display: flex;
      justify-content: right;
-    align-items: right;
+    align-items: center;
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 15px;
@@ -255,7 +255,7 @@ main {
 }
 .section {
     display: flex;
-    align-items: right;
+    align-items: center;
       justify-content: right;
       min-height: 100vh; /* Garante que o body ocupe toda a altura da janela */
       margin: 0; 
