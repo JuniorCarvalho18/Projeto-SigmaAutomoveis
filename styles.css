@@ -16,7 +16,9 @@
 
 /* Margem para o conteúdo, para que não fique por baixo da barra fixa */
 .content {
-    align-items: right
+    display: flex;
+     justify-content: right;
+    align-items: right;
     padding: 48px;
     border: 1px solid #cccccc00;
     border-radius: 5px;
