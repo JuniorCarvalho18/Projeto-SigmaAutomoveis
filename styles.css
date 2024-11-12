@@ -13,6 +13,13 @@
     box-shadow: 0 2px 5px rgb(255, 255, 255);
     width: auto;
 }
+.section {
+    display: flex;
+    align-items: center;
+      justify-content: right;
+      min-height: 100vh; /* Garante que o body ocupe toda a altura da janela */
+      margin: 0; 
+}
 
 /* Margem para o conteúdo, para que não fique por baixo da barra fixa */
 .content {
@@ -26,7 +33,25 @@
     border-radius: 5px;
     /* Ajuste conforme a altura da barra de pesquisa */
 }
+.content section {
+     display: flex;
+     justify-content: right;
+     min-height: 100vh; /* Garante que o body ocupe toda a altura da janela */
+      margin: 0;
+    align-items: center;
+    margin-bottom: 40px;
+}
 
+.content section h2 {
+     display: flex;
+     justify-content: right;
+    align-items: center;
+     min-height: 100vh; /* Garante que o body ocupe toda a altura da janela */
+      margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
 /* Container geral */
 .container {
     display: flex;
@@ -97,26 +122,6 @@ main {
     flex: 1;
     overflow-y: auto;
     padding: 20px;
-}
-
-.content section {
-     display: flex;
-     justify-content: right;
-     min-height: 100vh; /* Garante que o body ocupe toda a altura da janela */
-      margin: 0;
-    align-items: center;
-    margin-bottom: 40px;
-}
-
-.content section h2 {
-     display: flex;
-     justify-content: right;
-    align-items: center;
-     min-height: 100vh; /* Garante que o body ocupe toda a altura da janela */
-      margin: 0;
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 15px;
 }
 
 .btn {
@@ -258,11 +263,4 @@ main {
 .form-buttons button[type="submit"] {
     background-color: #000;
     color: #fff;
-}
-.section {
-    display: flex;
-    align-items: center;
-      justify-content: right;
-      min-height: 100vh; /* Garante que o body ocupe toda a altura da janela */
-      margin: 0; 
 }
