@@ -15,8 +15,8 @@
 }
 .section {
     display: flex;
-    align-items: center;
-      justify-content: right;
+    justify-content: center;
+    align-items: right;
       min-height: 100vh; /* Garante que o body ocupe toda a altura da janela */
       margin: 0; 
 }
@@ -24,8 +24,8 @@
 /* Margem para o conteúdo, para que não fique por baixo da barra fixa */
 .content {
     display: flex;
-     justify-content: right;
-    align-items: center;
+     justify-content: center;
+    align-items: right;
      min-height: 100vh; /* Garante que o body ocupe toda a altura da janela */
       margin: 0;
     padding: 48px;
@@ -35,17 +35,17 @@
 }
 .content section {
      display: flex;
-     justify-content: right;
+     justify-content: center;
+    align-items: right;
      min-height: 100vh; /* Garante que o body ocupe toda a altura da janela */
       margin: 0;
-    align-items: center;
     margin-bottom: 40px;
 }
 
 .content section h2 {
      display: flex;
-     justify-content: right;
-    align-items: center;
+     justify-content: center;
+    align-items: right;
      min-height: 100vh; /* Garante que o body ocupe toda a altura da janela */
       margin: 0;
     font-size: 24px;
