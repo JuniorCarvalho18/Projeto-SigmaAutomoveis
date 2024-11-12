@@ -246,9 +246,8 @@ main {
 }
 .section {
     display: flex;
-    align-items: right
+    align-items: right;
       justify-content: right;
-      /*align-items: center;*/
       min-height: 100vh; /* Garante que o body ocupe toda a altura da janela */
       margin: 0; 
 }
