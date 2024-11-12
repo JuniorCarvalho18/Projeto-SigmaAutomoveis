@@ -7,11 +7,13 @@
 }
 /* Estilo para a barra de pesquisa fixa */
 .header {
+    display: flex;
     position: fixed; 
     top: 0;
     background: rgb(240, 240, 240);
     box-shadow: 0 2px 5px rgb(255, 255, 255);
     width: auto;
+    heigth: auto;
 }
 .section {
    
