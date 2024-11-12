@@ -14,20 +14,13 @@
     width: auto;
 }
 .section {
-    display: flex;
-    justify-content: center;
-    align-items: right;
-      min-height: 100vh; /* Garante que o body ocupe toda a altura da janela */
-      margin: 0; 
+   
 }
 
 /* Margem para o conteúdo, para que não fique por baixo da barra fixa */
 .content {
     display: flex;
-     justify-content: center;
-    align-items: right;
-     min-height: 100vh; /* Garante que o body ocupe toda a altura da janela */
-      margin: 0;
+    
     padding: 48px;
     border: 1px solid #cccccc00;
     border-radius: 5px;
@@ -35,19 +28,13 @@
 }
 .content section {
      display: flex;
-     justify-content: center;
-    align-items: right;
-     min-height: 100vh; /* Garante que o body ocupe toda a altura da janela */
-      margin: 0;
+     
     margin-bottom: 40px;
 }
 
 .content section h2 {
      display: flex;
-     justify-content: center;
-    align-items: right;
-     min-height: 100vh; /* Garante que o body ocupe toda a altura da janela */
-      margin: 0;
+    
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 15px;
