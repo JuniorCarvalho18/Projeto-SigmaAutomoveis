@@ -8,7 +8,7 @@
 
 .section {
    display: flex;
-    margin-top: 40px; 
+    margin-top: 90px; 
     margin-bottom: 40px;
 }
 
@@ -101,6 +101,7 @@
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #ccc;
+    position: fixed;
 }
 
 body img {
