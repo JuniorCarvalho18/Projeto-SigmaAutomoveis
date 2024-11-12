@@ -98,10 +98,16 @@ main {
 }
 
 .content section {
+     display: flex;
+     justify-content: right;
+    align-items: right;
     margin-bottom: 40px;
 }
 
 .content section h2 {
+     display: flex;
+     justify-content: right;
+    align-items: right;
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 15px;
