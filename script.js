@@ -54,22 +54,38 @@ document.addEventListener('DOMContentLoaded', () => {
         btnAlterarVeiculo.addEventListener("click", mostrarEdicaoVeiculo);
     }
 
-    // Funções genéricas para outros controles
-    document.querySelectorAll('.btn-adicionar').forEach(button => {
+    // Função genérica para exibir os formulários de outras seções
+    function adicionarFormulario(sectionId) {
+        mostrarFormulario(`form-${sectionId}`);
+    }
+
+    function fecharFormularioSecao(sectionId) {
+        fecharFormulario(`form-${sectionId}`);
+    }
+
+    // Event listeners para botões de adicionar/fechar nas seções (com base em data-attributes)
+    const btnAdicionarList = document.querySelectorAll('.btn-adicionar');
+    const btnFecharList = document.querySelectorAll('.btn-fechar');
+
+    btnAdicionarList.forEach(button => {
         button.addEventListener("click", (e) => {
             const sectionId = e.target.getAttribute('data-section');
-            mostrarFormulario(`form-${sectionId}`);
+            if (sectionId) {
+                adicionarFormulario(sectionId);
+            }
         });
     });
 
-    document.querySelectorAll('.btn-fechar').forEach(button => {
+    btnFecharList.forEach(button => {
         button.addEventListener("click", (e) => {
             const sectionId = e.target.getAttribute('data-section');
-            fecharFormulario(`form-${sectionId}`);
+            if (sectionId) {
+                fecharFormularioSecao(sectionId);
+            }
         });
     });
 
-    // Exemplo de uso da conexão MySQL
+    // Exemplo de uso da conexão MySQL (back-end)
     const mysql = require('mysql');
     const connection = mysql.createConnection({
         host: 'localhost',
