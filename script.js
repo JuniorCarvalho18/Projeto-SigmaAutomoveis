@@ -55,3 +55,9 @@ document.querySelectorAll('.btn-fechar').forEach(button => {
         fecharFormulario(`form-${sectionId}`);
     });
 });
+const connection = mysql.createConnection({
+    host: 'localhost',
+    user: 'seu_usuario',
+    password: 'sua_senha',
+    database: 'sbase' // Sem a extensão .sql
+});
