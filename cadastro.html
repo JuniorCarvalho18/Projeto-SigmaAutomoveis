@@ -130,6 +130,7 @@
             <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirme sua senha" required>
 
             <button type="submit">Cadastrar</button>
+            
         </form>
         <p class="login-link">Já tem uma conta? <a href="login.html">Faça login</a></p>
     </div>
@@ -157,5 +158,29 @@
             window.location.href = 'inicial.html';
         });
     </script>
+    <script>
+    document.getElementById('registerForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const password = document.getElementById('password').value;
+        const confirmPassword = document.getElementById('confirmPassword').value;
+
+        if (!name || !email || !password || !confirmPassword) {
+            alert('Por favor, preencha todos os campos.');
+            return;
+        }
+
+        if (password !== confirmPassword) {
+            alert('As senhas não coincidem.');
+            return;
+        }
+
+        // Redireciona para a página inicial
+        window.location.href = 'index.html';
+    });
+</script>
+
 </body>
 </html>
