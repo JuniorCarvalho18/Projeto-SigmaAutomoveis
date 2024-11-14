@@ -1,5 +1,6 @@
 /* Reset básico */
 * {
+    display: flex;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -19,6 +20,7 @@
     display: flex;
     justify-content: flex-end;
     padding: 48px;
+    margin-top: 200px;
     border: 1px solid #cccccc00;
     border-radius: 5px;
     /* Ajuste conforme a altura da barra de pesquisa */
@@ -26,7 +28,7 @@
 .content section {
     justify-content: flex-end;
     display: flex;
-    margin-top: 40px; 
+    margin-top: 90px; 
     margin-bottom: 40px;
 }
 
@@ -45,6 +47,7 @@
 
 /* Barra lateral */
 .sidebar {
+    display: fixed;
     margin-top: 50px;
     width: 270px;
     background-color: #f0f0f0;
