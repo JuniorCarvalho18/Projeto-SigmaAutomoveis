@@ -7,9 +7,11 @@
 }
 
 .section {
-   display: flex;
-    margin-top: 90px; 
+    justify-content: flex-end;
+    display: flex;
+    margin-top: 200px; 
     margin-bottom: 40px;
+
 }
 
 /* Margem para o conteúdo, para que não fique por baixo da barra fixa */
