@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Função para mostrar o formulário de adicionar
+    // Função para mostrar um formulário com base em seu ID
     function mostrarFormulario(formId) {
         const form = document.getElementById(formId);
         if (form) {
@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Função para esconder o formulário de adicionar
+    // Função para fechar um formulário com base em seu ID
     function fecharFormulario(formId) {
         const form = document.getElementById(formId);
         if (form) {
@@ -31,15 +31,15 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Funções para alternar entre os formulários de adicionar e editar para Veículos
+    // Funções específicas para mostrar/ocultar formulários de Veículos
     function mostrarEdicaoVeiculo() {
-        document.getElementById("editar-veiculo").style.display = "block";
-        document.getElementById("adicionar-veiculo").style.display = "none"; // Oculta o formulário de adicionar
+        mostrarFormulario('editar-veiculo');
+        fecharFormulario('adicionar-veiculo');
     }
 
     function mostrarAdicionarVeiculo() {
-        document.getElementById("adicionar-veiculo").style.display = "block";
-        document.getElementById("editar-veiculo").style.display = "none"; // Oculta o formulário de edição
+        mostrarFormulario('adicionar-veiculo');
+        fecharFormulario('editar-veiculo');
     }
 
     // Event listeners para os botões de "Adicionar" e "Alterar" nas seções de Veículos
@@ -47,23 +47,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const btnAlterarVeiculo = document.querySelector(".btn-alterar-veiculo");
 
     if (btnAdicionarVeiculo) {
-        btnAdicionarVeiculo.addEventListener("click", () => mostrarFormulario('adicionar-veiculo'));
+        btnAdicionarVeiculo.addEventListener("click", () => mostrarAdicionarVeiculo());
     }
 
     if (btnAlterarVeiculo) {
         btnAlterarVeiculo.addEventListener("click", mostrarEdicaoVeiculo);
     }
 
-    // Função genérica para exibir os formulários de outras seções
-    function adicionarFormulario(sectionId) {
-        mostrarFormulario(`form-${sectionId}`);
-    }
-
-    function fecharFormularioSecao(sectionId) {
-        fecharFormulario(`form-${sectionId}`);
-    }
-
-    // Event listeners para botões de adicionar/fechar nas seções (com base em data-attributes)
+    // Event listeners para botões genéricos de adicionar/fechar nas seções (com base em data-attributes)
     const btnAdicionarList = document.querySelectorAll('.btn-adicionar');
     const btnFecharList = document.querySelectorAll('.btn-fechar');
 
@@ -71,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
         button.addEventListener("click", (e) => {
             const sectionId = e.target.getAttribute('data-section');
             if (sectionId) {
-                adicionarFormulario(sectionId);
+                mostrarFormulario(`form-${sectionId}`);
             }
         });
     });
@@ -80,25 +71,8 @@ document.addEventListener('DOMContentLoaded', () => {
         button.addEventListener("click", (e) => {
             const sectionId = e.target.getAttribute('data-section');
             if (sectionId) {
-                fecharFormularioSecao(sectionId);
+                fecharFormulario(`form-${sectionId}`);
             }
         });
-    });
-
-    // Exemplo de uso da conexão MySQL (back-end)
-    const mysql = require('mysql');
-    const connection = mysql.createConnection({
-        host: 'localhost',
-        user: 'seu_usuario',
-        password: 'sua_senha',
-        database: 'sbase' // Sem a extensão .sql
-    });
-
-    connection.connect((err) => {
-        if (err) {
-            console.error('Erro de conexão: ' + err.stack);
-            return;
-        }
-        console.log('Conectado como ID ' + connection.threadId);
     });
 });
