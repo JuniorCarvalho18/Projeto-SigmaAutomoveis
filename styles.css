@@ -15,7 +15,7 @@
 }
 
 /* Margem para o conteúdo, para que não fique por baixo da barra fixa */
-.conteudo section {
+.conteudos section {
     padding: 48px;
     display: flex;
     margin-top: 90px; 
