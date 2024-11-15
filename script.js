@@ -1,21 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Rolagem suave para links da barra lateral
-    const links = document.querySelectorAll('.sidebar a');
-    links.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault(); // Evita o comportamento padrão do link
-            const targetId = this.getAttribute('href'); // Obtém o ID da seção alvo
-            const targetSection = document.querySelector(targetId); // Seleciona a seção alvo
-
-            // Rolagem suave
-            targetSection.scrollIntoView({
-                behavior: 'smooth', // Comportamento de rolagem suave
-                block: 'center' // Centraliza a seção na tela
-            });
-        });
-    });
-
-    // Função para mostrar um formulário com base em seu ID
+    // Função para abrir formulários
     function mostrarFormulario(formId) {
         const form = document.getElementById(formId);
         if (form) {
@@ -23,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Função para fechar um formulário com base em seu ID
+    // Função para fechar formulários
     function fecharFormulario(formId) {
         const form = document.getElementById(formId);
         if (form) {
@@ -31,48 +15,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Funções específicas para mostrar/ocultar formulários de Veículos
-    function mostrarEdicaoVeiculo() {
-        mostrarFormulario('editar-veiculo');
-        fecharFormulario('adicionar-veiculo');
-    }
-
-    function mostrarAdicionarVeiculo() {
+    // Event listeners para os botões
+    document.querySelector('.btn-primary').addEventListener('click', () => {
         mostrarFormulario('adicionar-veiculo');
-        fecharFormulario('editar-veiculo');
-    }
-
-    // Event listeners para os botões de "Adicionar" e "Alterar" nas seções de Veículos
-    const btnAdicionarVeiculo = document.querySelector(".btn-primary");
-    const btnAlterarVeiculo = document.querySelector(".btn-alterar-veiculo");
-
-    if (btnAdicionarVeiculo) {
-        btnAdicionarVeiculo.addEventListener("click", () => mostrarAdicionarVeiculo());
-    }
-
-    if (btnAlterarVeiculo) {
-        btnAlterarVeiculo.addEventListener("click", mostrarEdicaoVeiculo);
-    }
-
-    // Event listeners para botões genéricos de adicionar/fechar nas seções (com base em data-attributes)
-    const btnAdicionarList = document.querySelectorAll('.btn-adicionar');
-    const btnFecharList = document.querySelectorAll('.btn-fechar');
-
-    btnAdicionarList.forEach(button => {
-        button.addEventListener("click", (e) => {
-            const sectionId = e.target.getAttribute('data-section');
-            if (sectionId) {
-                mostrarFormulario(`form-${sectionId}`);
-            }
-        });
     });
 
-    btnFecharList.forEach(button => {
-        button.addEventListener("click", (e) => {
-            const sectionId = e.target.getAttribute('data-section');
-            if (sectionId) {
-                fecharFormulario(`form-${sectionId}`);
-            }
-        });
+    document.querySelector('.btn-alterar-veiculo').addEventListener('click', () => {
+        mostrarFormulario('editar-veiculo');
     });
 });
