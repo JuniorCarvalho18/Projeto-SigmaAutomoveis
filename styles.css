@@ -15,20 +15,13 @@
 }
 
 /* Margem para o conteúdo, para que não fique por baixo da barra fixa */
-.content {
-    display: flex;
-    
-    padding: 48px;
-    margin-top: 200px;
-    border: 1px solid #cccccc00;
-    border-radius: 5px;
-    /* Ajuste conforme a altura da barra de pesquisa */
-}
 .content section {
-
+    padding: 48px;
     display: flex;
     margin-top: 90px; 
     margin-bottom: 40px;
+     border: 1px solid #cccccc00;
+    border-radius: 5px;
 }
 
 .content section h2 {
