@@ -1,3 +1,24 @@
+const mysql = require('mysql2/promise');
+
+async function conectarBanco() {
+  const connection = await mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: '',
+    database: 'sigma_system'
+  });
+  return connection;
+}
+
+async function consultarUsuarios() {
+  const connection = await conectarBanco();
+  const [rows, fields] = await connection.execute('SELECT * FROM usuarios');
+  console.log(rows);
+  connection.end();
+}
+
+consultarUsuarios();
+
 document.addEventListener('DOMContentLoaded', () => {
     // Rolagem suave para links da barra lateral
     const links = document.querySelectorAll('.sidebar a');
