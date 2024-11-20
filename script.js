@@ -8,8 +8,6 @@ async function conectarBanco() {
     database: 'sigma_system'
   });
   return connection;
-}
-
 // Função para abrir o formulário de adicionar veículo
 function adicionarVeiculo() {
     document.getElementById('adicionar-veiculo').style.display = 'block';
@@ -63,5 +61,3 @@ document.querySelector('.btn-primary').addEventListener('click', adicionarVeicul
 
 document.querySelector('.btn-alterar-compra').addEventListener('click', editarCompra);
 document.querySelector('.btn-primary').addEventListener('click', adicionarCompra);
-
-// Outras funções para controle de ações de botões podem ser adicionadas aqui conforme necessidade
