@@ -2,15 +2,22 @@
 CREATE DATABASE sigma_system;
 USE sigma_system;
 
+CREATE TABLE usuarios (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    senha varchar(10) NOT NULL
+      
+);
 -- Tabela de Veículos
 CREATE TABLE veiculos (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    chassi VARCHAR(50) NOT NULL,
+    nchassi VARCHAR(50) NOT NULL,
     placa VARCHAR(20) NOT NULL,
     marca VARCHAR(50) NOT NULL,
     modelo VARCHAR(50) NOT NULL,
-    ano_fabricacao INT NOT NULL,
-    ano_modelo INT NOT NULL,
+    ano_fabricacao INT (4)  NOT NULL,
+    ano_modelo INT (4)  NOT NULL,
     cor VARCHAR(20),
     preco DECIMAL(10, 2)
 );
@@ -26,26 +33,27 @@ CREATE TABLE compras (
 
 -- Tabela de Clientes
 CREATE TABLE clientes (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    nome VARCHAR(100) NOT NULL,
-    cpf VARCHAR(15) NOT NULL UNIQUE
+    cpf INT(11)  PRIMARY KEY NOT NULL,
+    nome VARCHAR(100) NOT NULL
+      
 );
 
 -- Tabela de Vendas
 CREATE TABLE vendas (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    cliente_id INT,
-    cpf_cliente VARCHAR(15),
+    cliente_cpf INT(11) not null,
+    vendedor_id int not null,
     endereco VARCHAR(100),
     valor DECIMAL(10, 2),
-    FOREIGN KEY (cliente_id) REFERENCES clientes(id)
+    FOREIGN KEY (cliente_cpf) REFERENCES clientes(cpf),
+    FOREIGN KEY (vendedor_id) REFERENCES vendedores(id)
 );
 
 -- Tabela de Vendedores
 CREATE TABLE vendedores (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    nome VARCHAR(100) NOT NULL,
-    codigo_vendedor INT UNIQUE NOT NULL
+    nome VARCHAR(100) NOT NULL
+ 
 );
 
 -- Tabela de Montadoras
