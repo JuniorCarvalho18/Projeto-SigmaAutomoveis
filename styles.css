@@ -221,14 +221,3 @@ section {
     height: 50px; /* Tamanho adequado para imagens da sidebar */
     border-radius: 50%; /* Imagens circulares */
 }
-
-/* Garantir que o conteúdo principal tenha uma margem à esquerda para não sobrepor a barra lateral */
-#content {
-    margin-left: 270px; /* Ajuste conforme necessário */
-    padding: 20px;
-}
-
-/* Ajustar a altura para que a barra lateral fique até o final */
-body, html {
-    height: 100%;
-}
