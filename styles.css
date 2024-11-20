@@ -1,20 +1,50 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+.section {
+    display: flex;
+    margin-top: 200px; 
+    margin-bottom: 40px;
+}
+
+/* Margem para o conteúdo, para que não fique por baixo da barra fixa */
+.content section h2 {
+    display: flex;
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+/* Container geral */
+.container {
+    display: flex;
+    height: 100vh;
+}
+
 /* Barra lateral */
 .sidebar {
-    position: fixed;  /* Fixada à esquerda da tela */
-    top: 0;           /* Começa no topo da tela */
+    position: fixed;
+    top: 0;
     left: 0;
     width: 270px;
+    height: 100%;
     background-color: #f0f0f0;
     border-right: 1px solid #ddd;
     padding: 20px;
-    height: 100vh;     /* Garantir que ocupe 100% da altura da tela */
-    overflow-y: auto;  /* Adiciona rolagem caso o conteúdo da sidebar seja maior que a altura da tela */
+    overflow-y: auto;
 }
 
 .sidebar .logo {
     display: flex;
     align-items: center;
     gap: 10px;
+    padding: 0px;
     margin-top: 30px;
     margin-bottom: 40px;
 }
@@ -44,15 +74,19 @@
 /* Barra superior */
 .header {
     width: 100%;
-    padding: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
     border-bottom: 1px solid #ddd;
     display: flex;
     position: fixed; 
     top: 0;
     left: 0;
     background-color: white;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    z-index: 10; /* Garante que a barra superior fique acima da barra lateral */
+    box-shadow: 0 2px 5px rgb(255, 255, 255);
+    height: auto;
+    z-index: 10;
 }
 
 .header input[type="text"] {
@@ -61,25 +95,17 @@
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #ccc;
-}
-
-/* Container principal */
-.container {
-    display: flex;
-    height: 100vh;
-    margin-top: 60px;  /* Para dar espaço para a barra superior fixa */
+    position: flex;
 }
 
 /* Conteúdo principal */
 main {
     flex: 1;
+    margin-left: 270px; /* Garantir que o conteúdo não fique sobre a barra lateral */
     overflow-y: auto;
-    margin-left: 270px; /* Deixa o conteúdo ao lado da barra lateral */
     padding: 20px;
-    padding-top: 80px; /* Espaço para a barra superior */
 }
 
-/* Estilos de botões */
 .btn {
     padding: 10px 20px;
     border: 1px solid #000;
@@ -94,18 +120,8 @@ main {
     color: #fff;
 }
 
-/* Layout das seções */
-section {
-    display: block; /* Garantir que as seções sejam blocos */
-    margin-bottom: 20px; /* Espaço entre as seções */
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-}
-
-/* Ajustes para imagens nas seções */
 .item {
-    display: block; /* Garantir que os itens fiquem empilhados */
+    display: inline-block;
     width: 150px;
     text-align: center;
     margin-top: 20px;
@@ -117,14 +133,21 @@ section {
     margin-bottom: 10px;
 }
 
-/* Formulário de adicionar e editar veículo */
+/* Formulários */
 #adicionar-veiculo, #editar-veiculo {
     max-width: 600px;
-    margin: 20px auto;
+    margin: 0 auto;
     padding: 20px;
-    background-color: #fff;
+    background-color: #ffffff;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#adicionar-veiculo h2, #editar-veiculo h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
 }
 
 .form-group {
@@ -169,7 +192,13 @@ section {
     color: #fff;
 }
 
-/* Ajustes para os controles específicos */
+/* Garantir que as seções fiquem em bloco e com espaçamento entre elas */
+section {
+    display: block;
+    margin-bottom: 20px; /* Espaço entre as seções */
+}
+
+/* Ajuste de altura, se necessário */
 #controle-veiculos, 
 #controle-compras, 
 #controle-vendas,
@@ -177,11 +206,29 @@ section {
 #controle-clientes, 
 #controle-vendedores, 
 #controle-montadoras {
-    margin-bottom: 40px; /* Maior espaço entre os controles */
+    margin-bottom: 20px;
 }
 
-/* Para imagens dentro de cada seção */
+/* Para as imagens dentro das seções */
 .item img {
     max-width: 100%;
     height: auto;
+}
+
+/* Ajuste das imagens para a barra lateral */
+.sidebar img {
+    width: 50px;  /* Tamanho adequado para imagens da sidebar */
+    height: 50px; /* Tamanho adequado para imagens da sidebar */
+    border-radius: 50%; /* Imagens circulares */
+}
+
+/* Garantir que o conteúdo principal tenha uma margem à esquerda para não sobrepor a barra lateral */
+#content {
+    margin-left: 270px; /* Ajuste conforme necessário */
+    padding: 20px;
+}
+
+/* Ajustar a altura para que a barra lateral fique até o final */
+body, html {
+    height: 100%;
 }
