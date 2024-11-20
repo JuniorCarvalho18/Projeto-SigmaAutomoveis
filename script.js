@@ -10,90 +10,58 @@ async function conectarBanco() {
   return connection;
 }
 
-async function consultarUsuarios() {
-  const connection = await conectarBanco();
-  const [rows, fields] = await connection.execute('SELECT * FROM usuarios');
-  console.log(rows);
-  connection.end();
+// Função para abrir o formulário de adicionar veículo
+function adicionarVeiculo() {
+    document.getElementById('adicionar-veiculo').style.display = 'block';
+    document.getElementById('editar-veiculo').style.display = 'none';
 }
 
-consultarUsuarios();
+// Função para abrir o formulário de editar veículo
+function editarVeiculo() {
+    document.getElementById('editar-veiculo').style.display = 'block';
+    document.getElementById('adicionar-veiculo').style.display = 'none';
+}
 
-document.addEventListener('DOMContentLoaded', () => {
-    // Rolagem suave para links da barra lateral
-    const links = document.querySelectorAll('.sidebar a');
-    links.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault(); // Evita o comportamento padrão do link
-            const targetId = this.getAttribute('href'); // Obtém o ID da seção alvo
-            const targetSection = document.querySelector(targetId); // Seleciona a seção alvo
+// Função para fechar qualquer formulário de veiculo
+function fecharFormulario() {
+    document.getElementById('adicionar-veiculo').style.display = 'none';
+    document.getElementById('editar-veiculo').style.display = 'none';
+}
 
-            // Rolagem suave
-            targetSection.scrollIntoView({
-                behavior: 'smooth', // Comportamento de rolagem suave
-                block: 'center' // Centraliza a seção na tela
-            });
-        });
-    });
+// Função para abrir o formulário de adicionar compra
+function adicionarCompra() {
+    document.getElementById('adicionar-compra').style.display = 'block';
+    document.getElementById('editar-compra').style.display = 'none';
+}
 
-    // Função para mostrar um formulário com base em seu ID
-    function mostrarFormulario(formId) {
-        const form = document.getElementById(formId);
-        if (form) {
-            form.style.display = "block";
-        }
-    }
+// Função para abrir o formulário de editar compra
+function editarCompra() {
+    document.getElementById('editar-compra').style.display = 'block';
+    document.getElementById('adicionar-compra').style.display = 'none';
+}
 
-    // Função para fechar um formulário com base em seu ID
-    function fecharFormulario(formId) {
-        const form = document.getElementById(formId);
-        if (form) {
-            form.style.display = "none";
-        }
-    }
+// Função para fechar qualquer formulário de compra
+function fecharFormularioCompra() {
+    document.getElementById('adicionar-compra').style.display = 'none';
+    document.getElementById('editar-compra').style.display = 'none';
+}
 
-    // Funções específicas para mostrar/ocultar formulários de Veículos
-    function mostrarEdicaoVeiculo() {
-        mostrarFormulario('editar-veiculo');
-        fecharFormulario('adicionar-veiculo');
-    }
+// Função para fechar o formulário de edição de compra
+function fecharEdicaoCompra() {
+    document.getElementById('editar-compra').style.display = 'none';
+}
 
-    function mostrarAdicionarVeiculo() {
-        mostrarFormulario('adicionar-veiculo');
-        fecharFormulario('editar-veiculo');
-    }
+// Função para fechar qualquer formulário de vendas, pedidos, clientes e vendedores
+function fecharEdicao() {
+    // Aqui você pode adicionar lógicas para outros formulários se necessário
+    console.log("Fechar edição");
+}
 
-    // Event listeners para os botões de "Adicionar" e "Alterar" nas seções de Veículos
-    const btnAdicionarVeiculo = document.querySelector(".btn-primary");
-    const btnAlterarVeiculo = document.querySelector(".btn-alterar-veiculo");
+// Função para manipular a exibição de formulários para outras seções
+document.querySelector('.btn-alterar-veiculo').addEventListener('click', editarVeiculo);
+document.querySelector('.btn-primary').addEventListener('click', adicionarVeiculo);
 
-    if (btnAdicionarVeiculo) {
-        btnAdicionarVeiculo.addEventListener("click", () => mostrarAdicionarVeiculo());
-    }
+document.querySelector('.btn-alterar-compra').addEventListener('click', editarCompra);
+document.querySelector('.btn-primary').addEventListener('click', adicionarCompra);
 
-    if (btnAlterarVeiculo) {
-        btnAlterarVeiculo.addEventListener("click", mostrarEdicaoVeiculo);
-    }
-
-    // Event listeners para botões genéricos de adicionar/fechar nas seções (com base em data-attributes)
-    const btnAdicionarList = document.querySelectorAll('.btn-adicionar');
-    const btnFecharList = document.querySelectorAll('.btn-fechar');
-
-    btnAdicionarList.forEach(button => {
-        button.addEventListener("click", (e) => {
-            const sectionId = e.target.getAttribute('data-section');
-            if (sectionId) {
-                mostrarFormulario(`form-${sectionId}`);
-            }
-        });
-    });
-
-    btnFecharList.forEach(button => {
-        button.addEventListener("click", (e) => {
-            const sectionId = e.target.getAttribute('data-section');
-            if (sectionId) {
-                fecharFormulario(`form-${sectionId}`);
-            }
-        });
-    });
-});
+// Outras funções para controle de ações de botões podem ser adicionadas aqui conforme necessidade
