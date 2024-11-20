@@ -1,28 +1,14 @@
-/* Reset básico */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
-
-/* Container geral */
-.container {
-    display: flex;
-    height: 100vh;
-    margin-top: 60px; /* Para dar espaço para a barra superior fixa */
-}
-
 /* Barra lateral */
 .sidebar {
-    position: fixed;  /* Corrigido de "display: fixed" para "position: fixed" */
-    top: 60px; /* Ajuste para ficar abaixo da barra superior */
+    position: fixed;  /* Fixada à esquerda da tela */
+    top: 0;           /* Começa no topo da tela */
     left: 0;
     width: 270px;
     background-color: #f0f0f0;
     border-right: 1px solid #ddd;
     padding: 20px;
-    height: calc(100vh - 60px); /* Para ocupar toda a altura da tela */
+    height: 100vh;     /* Garantir que ocupe 100% da altura da tela */
+    overflow-y: auto;  /* Adiciona rolagem caso o conteúdo da sidebar seja maior que a altura da tela */
 }
 
 .sidebar .logo {
@@ -66,7 +52,7 @@
     left: 0;
     background-color: white;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    z-index: 10; /* Garante que fique acima de outros elementos */
+    z-index: 10; /* Garante que a barra superior fique acima da barra lateral */
 }
 
 .header input[type="text"] {
@@ -75,6 +61,13 @@
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #ccc;
+}
+
+/* Container principal */
+.container {
+    display: flex;
+    height: 100vh;
+    margin-top: 60px;  /* Para dar espaço para a barra superior fixa */
 }
 
 /* Conteúdo principal */
@@ -86,7 +79,7 @@ main {
     padding-top: 80px; /* Espaço para a barra superior */
 }
 
-/* Estilos para os botões */
+/* Estilos de botões */
 .btn {
     padding: 10px 20px;
     border: 1px solid #000;
@@ -101,9 +94,18 @@ main {
     color: #fff;
 }
 
-/* Para as imagens dentro das seções */
+/* Layout das seções */
+section {
+    display: block; /* Garantir que as seções sejam blocos */
+    margin-bottom: 20px; /* Espaço entre as seções */
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+
+/* Ajustes para imagens nas seções */
 .item {
-    display: block; /* Garantir que fiquem empilhadas */
+    display: block; /* Garantir que os itens fiquem empilhados */
     width: 150px;
     text-align: center;
     margin-top: 20px;
@@ -115,21 +117,7 @@ main {
     margin-bottom: 10px;
 }
 
-/* Seções */
-section {
-    margin-bottom: 20px; /* Espaço entre as seções */
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-}
-
-h2 {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 15px;
-}
-
-/* Ajustes para o formulário de adicionar e editar veículo */
+/* Formulário de adicionar e editar veículo */
 #adicionar-veiculo, #editar-veiculo {
     max-width: 600px;
     margin: 20px auto;
