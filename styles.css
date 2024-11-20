@@ -259,3 +259,32 @@ main {
     background-color: #000;
     color: #fff;
 }
+
+/* Garantir que as seções fiquem em bloco e com espaçamento entre elas */
+section {
+    display: block;
+    margin-bottom: 20px; /* Espaço entre as seções */
+}
+
+/* Opcional: adicionar uma margem à esquerda para o conteúdo (se necessário) */
+#content {
+    margin-left: 220px; /* Ajuste conforme necessário */
+    padding: 20px;
+}
+
+/* Ajuste de altura, se necessário */
+#controle-veiculos, 
+#controle-compras, 
+#controle-vendas,
+#controle-pedidos, 
+#controle-clientes, 
+#controle-vendedores, 
+#controle-montadoras {
+    margin-bottom: 20px;
+}
+
+/* Para as imagens dentro das seções */
+.item img {
+    max-width: 100%;
+    height: auto;
+}
