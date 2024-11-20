@@ -6,56 +6,31 @@
     font-family: Arial, sans-serif;
 }
 
-.section {
-    
-    display: flex;
-    margin-top: 200px; 
-    margin-bottom: 40px;
-
-}
-
-/* Margem para o conteúdo, para que não fique por baixo da barra fixa */
-/* .conteudos section {
-    padding: 48px;
-    display: flex;
-    margin-top: 90px; 
-    margin-bottom: 40px;
-     border: 1px solid #cccccc00;
-    border-radius: 5px;
-}*/
-
-.content section h2 {
-     display: flex;
-    font-size: 24px;
-    font-weight: bold;
-    margin-top: 30px;
-    margin-bottom: 15px;
-}
 /* Container geral */
 .container {
     display: flex;
     height: 100vh;
+    margin-top: 60px; /* Para dar espaço para a barra superior fixa */
 }
 
 /* Barra lateral */
 .sidebar {
-    display: fixed;
-    margin-top: 50px;
+    position: fixed;  /* Corrigido de "display: fixed" para "position: fixed" */
+    top: 60px; /* Ajuste para ficar abaixo da barra superior */
+    left: 0;
     width: 270px;
     background-color: #f0f0f0;
     border-right: 1px solid #ddd;
-    align-items: right;
-     padding: 20px;
+    padding: 20px;
+    height: calc(100vh - 60px); /* Para ocupar toda a altura da tela */
 }
 
 .sidebar .logo {
     display: flex;
     align-items: center;
     gap: 10px;
-    padding: 0px;
     margin-top: 30px;
     margin-bottom: 40px;
-   
 }
 
 .sidebar h2 {
@@ -83,17 +58,15 @@
 /* Barra superior */
 .header {
     width: 100%;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding: 10px;
     border-bottom: 1px solid #ddd;
     display: flex;
     position: fixed; 
     top: 0;
+    left: 0;
     background-color: white;
-    box-shadow: 0 2px 5px rgb(255, 255, 255);
-    height: auto;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 10; /* Garante que fique acima de outros elementos */
 }
 
 .header input[type="text"] {
@@ -102,23 +75,18 @@
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #ccc;
-    position: flex;
 }
-
-body img {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-}
-
 
 /* Conteúdo principal */
 main {
     flex: 1;
     overflow-y: auto;
+    margin-left: 270px; /* Deixa o conteúdo ao lado da barra lateral */
     padding: 20px;
+    padding-top: 80px; /* Espaço para a barra superior */
 }
 
+/* Estilos para os botões */
 .btn {
     padding: 10px 20px;
     border: 1px solid #000;
@@ -133,8 +101,9 @@ main {
     color: #fff;
 }
 
+/* Para as imagens dentro das seções */
 .item {
-    display: inline-block;
+    display: block; /* Garantir que fiquem empilhadas */
     width: 150px;
     text-align: center;
     margin-top: 20px;
@@ -145,134 +114,74 @@ main {
     height: 80px;
     margin-bottom: 10px;
 }
-#adicionar-veiculo {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
 
-#adicionar-veiculo h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 24px;
-    color: #333;
-}
-
-.form-group {
-    margin-bottom: 15px;
-}
-
-.form-group label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
-    color: #333;
-}
-
-.form-group input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-}
-
-.form-buttons {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
-}
-
-.form-buttons button {
-    padding: 10px 20px;
-    font-size: 16px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-.form-buttons button[type="button"] {
-    background-color: #ccc;
-}
-
-.form-buttons button[type="submit"] {
-    background-color: #000;
-    color: #fff;
-}
-#editar-veiculo {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-#editar-veiculo h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 24px;
-    color: #333;
-}
-
-.form-group {
-    margin-bottom: 15px;
-}
-
-.form-group label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
-    color: #333;
-}
-
-.form-group input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-}
-
-.form-buttons {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
-}
-
-.form-buttons button {
-    padding: 10px 20px;
-    font-size: 16px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-.form-buttons button[type="button"] {
-    background-color: #ccc;
-}
-
-.form-buttons button[type="submit"] {
-    background-color: #000;
-    color: #fff;
-}
-
-/* Garantir que as seções fiquem em bloco e com espaçamento entre elas */
+/* Seções */
 section {
-    display: block;
     margin-bottom: 20px; /* Espaço entre as seções */
-}
-
-/* Opcional: adicionar uma margem à esquerda para o conteúdo (se necessário) */
-#content {
-    margin-left: 220px; /* Ajuste conforme necessário */
     padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
 }
 
-/* Ajuste de altura, se necessário */
+h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Ajustes para o formulário de adicionar e editar veículo */
+#adicionar-veiculo, #editar-veiculo {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.form-buttons button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.form-buttons button[type="button"] {
+    background-color: #ccc;
+}
+
+.form-buttons button[type="submit"] {
+    background-color: #000;
+    color: #fff;
+}
+
+/* Ajustes para os controles específicos */
 #controle-veiculos, 
 #controle-compras, 
 #controle-vendas,
@@ -280,10 +189,10 @@ section {
 #controle-clientes, 
 #controle-vendedores, 
 #controle-montadoras {
-    margin-bottom: 20px;
+    margin-bottom: 40px; /* Maior espaço entre os controles */
 }
 
-/* Para as imagens dentro das seções */
+/* Para imagens dentro de cada seção */
 .item img {
     max-width: 100%;
     height: auto;
