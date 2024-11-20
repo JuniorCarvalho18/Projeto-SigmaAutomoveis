@@ -8,6 +8,7 @@ async function conectarBanco() {
     database: 'sigma_system'
   });
   return connection;
+
 document.addEventListener('DOMContentLoaded', function() {
     // Seleciona todos os links da barra lateral
     const links = document.querySelectorAll('.sidebar a');
@@ -22,12 +23,14 @@ document.addEventListener('DOMContentLoaded', function() {
             const targetId = link.getAttribute('href').substring(1); // Remove o '#'
             const targetSection = document.getElementById(targetId);
             
-            // Faz a rolagem suave até a seção alvo
+            // Verifica se a seção existe
             if (targetSection) {
                 targetSection.scrollIntoView({
                     behavior: 'smooth', // Efeito de rolagem suave
                     block: 'start' // Alinha a seção ao topo da janela
                 });
+            } else {
+                console.log('Seção não encontrada para o id:', targetId);
             }
         });
     });
