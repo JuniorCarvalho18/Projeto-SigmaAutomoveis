@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function () {
       nome: document.getElementById('nomeAlterar').value,
       modelo: document.getElementById('modeloAlterar').value,
       ano: document.getElementById('anoAlterar').value,
-      preco: document.getElementById('precoAlterar').value,
+   
     };
 
     try {
