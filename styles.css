@@ -7,12 +7,12 @@
 
 .section {
     display: flex;
-    justify-content: space-evenly; /* Adicionado para distribuir igualmente os itens */
-    margin-top: 200px;
+    margin-top: 200px; 
     margin-bottom: 40px;
 }
 
-.section h2 {
+.content section h2 {
+    display: flex;
     font-size: 24px;
     font-weight: bold;
     margin-top: 30px;
@@ -25,20 +25,23 @@
     height: 100vh;
 }
 
-/* Barra lateral */
+/* Barra lateral - Removida a sombra */
 .sidebar {
-    position: fixed;
+    display: fixed;
     margin-top: 50px;
     width: 270px;
     background-color: #f0f0f0;
     border-right: 1px solid #ddd;
+    align-items: right;
     padding: 20px;
+    /* Removendo a sombra da sidebar */
 }
 
 .sidebar .logo {
     display: flex;
     align-items: center;
     gap: 10px;
+    padding: 0px;
     margin-top: 30px;
     margin-bottom: 40px;
 }
@@ -67,15 +70,17 @@
 
 /* Barra superior */
 .header {
-    width: calc(100% - 270px); /* Ajusta ao lado da sidebar */
-    padding: 10px;
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
     border-bottom: 1px solid #ddd;
     display: flex;
-    position: fixed;
+    position: fixed; 
     top: 0;
-    left: 270px; /* Ajusta a posição devido à sidebar */
     background-color: white;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra na barra superior */
     height: auto;
 }
 
@@ -85,7 +90,8 @@
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #ccc;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: flex;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra nos campos de entrada */
 }
 
 body img {
@@ -97,9 +103,8 @@ body img {
 /* Conteúdo principal */
 main {
     flex: 1;
-    margin-left: 270px; /* Espaço para a sidebar */
-    padding: 20px;
     overflow-y: auto;
+    padding: 20px;
 }
 
 /* Botões */
@@ -110,15 +115,15 @@ main {
     background-color: #fff;
     cursor: pointer;
     margin-right: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra nos botões */
 }
 
 .btn-primary {
     background-color: #000;
     color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra no botão primário */
 }
 
-/* Itens e imagens */
 .item {
     display: inline-block;
     width: 150px;
@@ -132,18 +137,77 @@ main {
     margin-bottom: 10px;
 }
 
-/* Formulários */
-#adicionar-veiculo,
+/* Adicionar veículo */
+#adicionar-veiculo {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra no formulário */
+}
+
+#adicionar-veiculo h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra nos inputs */
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.form-buttons button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra nos botões */
+}
+
+.form-buttons button[type="button"] {
+    background-color: #ccc;
+}
+
+.form-buttons button[type="submit"] {
+    background-color: #000;
+    color: #fff;
+}
+
+/* Editar veículo */
 #editar-veiculo {
     max-width: 600px;
     margin: 0 auto;
     padding: 20px;
     background-color: #ffffff;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra no formulário */
 }
 
-#adicionar-veiculo h2,
 #editar-veiculo h2 {
     text-align: center;
     margin-bottom: 20px;
@@ -168,7 +232,7 @@ main {
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 16px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra nos inputs */
 }
 
 .form-buttons {
@@ -183,6 +247,7 @@ main {
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra nos botões */
 }
 
 .form-buttons button[type="button"] {
@@ -194,10 +259,10 @@ main {
     color: #fff;
 }
 
-/* Garantir que as seções fiquem em bloco */
+/* Garantir que as seções fiquem em bloco e com espaçamento entre elas */
 section {
     display: block;
-    margin-bottom: 20px;
+    margin-bottom: 20px; /* Espaço entre as seções */
 }
 
 /* Para as imagens dentro das seções */
@@ -206,7 +271,13 @@ section {
     height: auto;
 }
 
-/* Inputs inválidos */
+/* Adicionando sombra nas divs (exceto na sidebar) */
+div {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra nas divs */
+    border-radius: 8px; /* Sombra com bordas arredondadas */
+    padding: 20px;
+    margin: 10px 0;
+}
 input:invalid {
     border: 2px solid red;
 }
