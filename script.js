@@ -1,5 +1,6 @@
 const mysql = require('mysql2/promise');
 
+// Função para conectar ao banco de dados
 async function conectarBanco() {
   const connection = await mysql.createConnection({
     host: 'localhost',
@@ -8,7 +9,9 @@ async function conectarBanco() {
     database: 'sigma_system'
   });
   return connection;
+}
 
+// Evento que garante que o DOM esteja carregado antes de manipular os links
 document.addEventListener('DOMContentLoaded', function() {
     // Seleciona todos os links da barra lateral
     const links = document.querySelectorAll('.sidebar a');
@@ -34,4 +37,11 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+});
+
+// Exemplo de chamada da função conectarBanco(), se necessário:
+conectarBanco().then(connection => {
+  console.log('Conectado ao banco de dados');
+}).catch(err => {
+  console.log('Erro ao conectar ao banco:', err);
 });
