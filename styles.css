@@ -3,6 +3,27 @@
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
 }
+.header {
+    width: 100%;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    position: fixed; 
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra na barra superior */
+    height: auto;
+}
+
+.header input[type="text"] {
+    background-color: white;
+    width: 98%;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    position: flex;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra nos campos de entrada */
+}
 
 .sidebar {
     
@@ -14,6 +35,7 @@
 
 }
 .logobar{
+    background-color: whitesmoke;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -44,56 +66,53 @@
 .sidebar nav ul li a:hover {
     color: #007bff;
 }
-
-/* Barra superior */
-.header {
-    width: 100%;
-    padding: 10px;
-    border-bottom: 1px solid #ddd;
-    display: flex;
-    position: fixed; 
-    background-color: white;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra na barra superior */
+/* Conteúdo principal */
+main {
+    background-color: #ffffff;
     height: auto;
-}
-
-.header input[type="text"] {
-    background-color: white;
-    width: 98%;
-    padding: 10px;
-    margin: 5px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    position: flex;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra nos campos de entrada */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    overflow-y: auto;
+    padding: 60px 0 0 0;
 }
 body{
+    width: auto;
     margin: 0;
 }
 body img {
     border-radius: 100%;
 }
-
-/* Conteúdo principal */
-main {
-    flex: 1;
-    overflow-y: auto;
-    padding: 60px 20px 20px 20px;
-}
 /* Container geral */
 .container {
+    min-width: 1170px;
     display: flex;
     height: 100vh;
+    width: auto;
+    padding: 20px 0 0 0;
+}
+div {
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra nas divs */
+    border-radius: 8px; /* Sombra com bordas arredondadas */
+    padding: 20px; 
+}
+main div{
+    height: auto;
+    width: auto;
+    padding: 30px;
+    margin: 0 30px 30px 30px;
 }
 section {
-    display: flex;
     height: 220px;
-    width: 1110px;
+    width: auto;
+    display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: space-between;
     align-content: space-around;
-    margin: 20px;
+    padding: 20px;
 }
 h2 {
     display: flex;
@@ -109,13 +128,11 @@ h2 {
 }
 /* Botões */
 .btn {
-    align-items: flex-end;
     padding: 10px 20px;
     border: 1px solid #000;
     border-radius: 5px;
     background-color: #fff;
     cursor: pointer;
-    margin-right: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra nos botões */
 }
 
@@ -124,13 +141,16 @@ h2 {
     color: #fff;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra no botão primário */
 }
+/*.btn-alterar {
 
+}*/
 .item {
     display: inline-block;
-    flex-direction: column;
-    align-items: flex-end;
-    width: 150px;
+    height: 200px;
+    min-width: 200px;
+    width: auto;
     text-align: center;
+    margin-bottom: 0;
 }
 
 .item img {
@@ -269,12 +289,4 @@ h2 {
     
 }*/
 
-/* Adicionando sombra nas divs (exceto na sidebar) */
-div {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra nas divs */
-    border-radius: 8px; /* Sombra com bordas arredondadas */
-    padding: 20px; 
-}
-.container{
-    padding: 20px 20px 20px 0; 
-}
+
