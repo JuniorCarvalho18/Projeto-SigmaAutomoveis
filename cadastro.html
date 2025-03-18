@@ -158,29 +158,6 @@
             window.location.href = 'main.html';
         });
     </script>
-    <script>
-    document.getElementById('registerForm').addEventListener('submit', function(event) {
-        event.preventDefault();
-
-        const name = document.getElementById('name').value.trim();
-        const email = document.getElementById('email').value.trim();
-        const password = document.getElementById('password').value;
-        const confirmPassword = document.getElementById('confirmPassword').value;
-
-        if (!name || !email || !password || !confirmPassword) {
-            alert('Por favor, preencha todos os campos.');
-            return;
-        }
-
-        if (password !== confirmPassword) {
-            alert('As senhas não coincidem.');
-            return;
-        }
-
-        // Redireciona para a página inicial
-        window.location.href = 'main.html';
-    });
-</script>
 
 </body>
 </html>
