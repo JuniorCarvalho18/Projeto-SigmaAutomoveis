@@ -14,7 +14,7 @@
     height: auto;
 }
 
-.header input[type="text"] {
+.header input[type="search"] {
     background-color: white;
     width: 98%;
     padding: 10px;
