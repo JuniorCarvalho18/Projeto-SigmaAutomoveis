@@ -48,8 +48,8 @@
 }
 
 .sidebar h2 {
-    display: block;
-    font-size: 18px;
+    text-align: center;
+    font-size: 1em;
 }
 .sidebar nav ul li {
     list-style: none;
@@ -142,9 +142,7 @@ h2 {
     color: #fff;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra no botão primário */
 }
-/*.btn-alterar {
 
-}*/
 .item {
     display: inline-block;
     height: 200px;
@@ -165,7 +163,7 @@ h2 {
     display: block;
     text-align: center;
     margin-bottom: 20px;
-    font-size: 24px;
+    font-size: 2em;
     color: #333;
 }
 .pop{
