@@ -3,11 +3,16 @@
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
 }
+.elemento:hover{
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+.texto:hover{
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
 .header {
     width: 100%;
     padding: 10px;
     border-bottom: 1px solid #ddd;
-    display: flex;
     position: fixed; 
     background-color: white;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra na barra superior */
@@ -21,7 +26,6 @@
     margin: 5px;
     border-radius: 5px;
     border: 1px solid #ccc;
-    position: flex;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra nos campos de entrada */
 }
 
