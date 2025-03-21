@@ -1,23 +1,26 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rede Sigma Software System</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<!-- Barra superior -->
-<header class="header">
-    <input class="elemento" type="search" placeholder="Pesquisar">
-</header>
+
 <body>
+    <!-- Barra superior -->
+    <header class="header">
+        <input class="elemento" type="search" placeholder="Pesquisar">
+    </header>
     <div class="container">
         <!-- Barra lateral -->
         <aside class="sidebar">
             <div class="logobar">
-                <img src="images/logo.jpeg" id="logo"  class="elemento" alt="Logo Rede Sigma" height="100px" width="100px">
+                <img src="images/logo.jpeg" id="logo" class="elemento" alt="Logo Rede Sigma" height="100px"
+                    width="100px">
                 <h2 class="texto">Rede Sigma Software System</h2>
-            </div> 
+            </div>
             <nav>
                 <ul>
                     <li class="texto"><a href="#controle-veiculos">Controle de Veículos</a></li>
@@ -33,13 +36,13 @@
 
         <!-- Conteúdo principal -->
         <main>
-           
-                <div class="elemento" >
-             <section id="controle-veiculos">
+
+            <div class="elemento">
+                <section id="controle-veiculos">
 
                     <h2>Controle de Veículos</h2>
-                        <button class="elemento btn btn-alterar" onclick="editarVeiculo()">Alterar Veículos</button>
-                        <button class="elemento btn btn-primary" onclick="adicionarVeiculo()">Adicionar Veículos</button>
+                    <button class="elemento btn btn-alterar" onclick="editarVeiculo()">Alterar Veículos</button>
+                    <button class="elemento btn btn-primary" onclick="adicionarVeiculo()">Adicionar Veículos</button>
                     <div class="elemento item">
                         <img src="images/argo.jpeg" alt="Argo">
                         <p>Veículo 1<br>Marca: Fiat</p>
@@ -48,221 +51,223 @@
                         <img src="images/gol.jpeg" alt="Gol">
                         <p>Veículo 2<br>Marca: Volkswagen</p>
                     </div>
-                
+
                     <div id="elemento editar-veiculo" class="editar" style="display: none;">
                         <form class="elemento pop">
                             <h2>Editar Veículo</h2><br>
-                                    <div class="elemento form-group">
-                                        <label for="chassi">Número do chassi</label>
-                                        <input type="text" id="chassi" placeholder="Insira o Número do Chassi" value="">
-                                    </div>
-                                    <div class="elemento form-group">
-                                        <label for="placa">Placa</label>
-                                        <input type="text" id="placa" placeholder="Insira a Placa" value="">
-                                    </div>
-                                    <div class="elemento form-group">
-                                        <label for="marca">Marca</label>
-                                        <input type="text" id="marca" placeholder="Insira a Marca" value="">
-                                    </div>
-                                    <div class="elemento form-group">
-                                        <label for="modelo">Modelo</label>
-                                        <input type="text" id="modelo" placeholder="Insira o Modelo" value="">
-                                    </div>
-                                    <div class="elemento form-group">
-                                        <label for="anoFabricacao">Ano de fabricação</label>
-                                        <input type="text" id="anoFabricacao" placeholder="Insira o Ano de fabricação" value="">
-                                    </div>
-                                    <div class="elemento form-group">
-                                        <label for="anoModelo">Ano do modelo</label>
-                                        <input type="text" id="anoModelo" placeholder="Insira o Ano do modelo" value="">
-                                    </div>
-                                    <div class="elemento form-group">
-                                        <label for="cor">Cor</label>
-                                        <input type="text" id="cor" placeholder="Insira a Cor" value="">
-                                    </div>
-                                    <div class="elemento form-group">
-                                        <label for="preco">Preço</label>
-                                        <input type="text" id="preco" placeholder="Insira o Preço" value="R$ " style="color: grey;">
-                                    </div>
-                                    <div class="elemento form-buttons">
-                                        <button class="elemento" type="button" onclick="fecharFormulario()">Cancelar</button>
-                                        <button class="elemento" type="submit">Salvar Alterações</button>
-                                    </div>
-                                </form>
+                            <div class="elemento form-group">
+                                <label for="chassi">Número do chassi</label>
+                                <input type="text" id="chassi" placeholder="Insira o Número do Chassi" value="">
                             </div>
-                        </div>
-                       </section>
-                       <div id="adicionar-veiculo" class="elemento adicionar" style="display: none;"> 
-                        <form class="elemento pop">
-                            <h2>Adicionar Veículo</h2><br>
-                                    <div class="elemento form-group">
-                                        <label for="chassi">Número do chassi</label>
-                                        <input type="text" id="chassi" placeholder="Insira o Número do Chassi">
-                                    </div>
-                                    <div class="elemento form-group">
-                                        <label for="placa">Placa</label>
-                                        <input type="text" id="placa" placeholder="Insira a Placa">
-                                    </div>
-                                    <div class="elemento form-group">
-                                        <label for="marca">Marca</label>
-                                        <input type="text" id="marca" placeholder="Insira a Marca">
-                                    </div>
-                                    <div class="elemento form-group">
-                                        <label for="modelo">Modelo</label>
-                                        <input type="text" id="modelo" placeholder="Insira o Modelo">
-                                    </div>
-                                    <div class="elemento form-group">
-                                        <label for="anoFabricacao">Ano de fabricação</label>
-                                        <input type="text" id="anoFabricacao" placeholder="Insira o Ano de fabricação">
-                                    </div>
-                                    <div class="elemento form-group">
-                                        <label for="anoModelo">Ano do modelo</label>
-                                        <input type="text" id="anoModelo" placeholder="Insira o Ano do modelo">
-                                    </div>
-                                    <div class="elemento form-group">
-                                        <label for="cor">Cor</label>
-                                        <input type="text" id="cor" placeholder="Insira a Cor">
-                                    </div>
-                                    <div class="elemento form-group">
-                                        <label for="preco">Preço</label>
-                                        <input type="text" id="preco" placeholder="Insira o Preço">
-                                    </div>
-                                    <div class="elemento form-buttons">
-                                        <button type="button" onclick="fecharFormulario()">Cancelar</button>
-                                        <button type="submit">Adicionar</button>
-                                    </div>
-                         </form>
+                            <div class="elemento form-group">
+                                <label for="placa">Placa</label>
+                                <input type="text" id="placa" placeholder="Insira a Placa" value="">
                             </div>
-                            
-                                 <div class="elemento" >
-                            <section id="controle-compras">
-                                <h2>Controle de Compras</h2>
-                                    <button class="elemento btn btn-alterar">Alterar Compra</button>
-                                    <button class="elemento btn btn-primary">Adicionar Compra</button>
-                                
-                                <div class="item">
-                                  <img src="images/hb20.jpeg" alt="HB20">
-                                  <p>Hyundai HB20<br>End: J50</p>
-                                </div>
-                                
-                                <div class="item">
-                                  <img src="images/ka.jpeg" alt="Ka">
-                                  <p>Ford Ka<br>End: f15</p>
-                                </div>
-                              </div>
-                              
-                                 <div id="adicionar-compra" class="adicionar" style="display: none;">
-                                <h2>Adicionar Nova Compra</h2>
-                                <form class="pop">
-                                  <div class="form-group">
-                                    <label for="produto">Produto</label>
-                                    <input type="text" id="produto" placeholder="Insira o Produto">
-                                  </div>
-                                  
-                                  <div class="form-group">
-                                    <label for="quantidade">Quantidade</label>
-                                    <input type="text" id="quantidade" placeholder="Insira a Quantidade">
-                                  </div>
-                                  
-                                  <div class="form-group">
-                                    <label for="preco-compra">Preço</label>
-                                    <input type="text" id="preco-compra" placeholder="Insira o Preço">
-                                  </div>
-                                  
-                                  <div class="form-group">
-                                    <label for="fornecedor">Fornecedor</label>
-                                    <input type="text" id="fornecedor" placeholder="Insira o Fornecedor">
-                                  </div>
-                                  
-                                  <div class="form-buttons">
-                                    <button class="elemento"  type="button" onclick="fecharFormularioCompra()">Cancelar</button>
-                                    <button class="elemento" type="submit">Adicionar</button>
-                                  </div>
-                                </form>
-                              </div>
-                              
-                                <div id="editar-compra" class="editar" style="display: none;">
-                                <h2>Editar Compra</h2>
-                                <form class="pop">
-                                  <div class="form-group">
-                                    <label for="produto-editar">Produto</label>
-                                    <input type="text" id="produto-editar" placeholder="Insira o Produto" value="Produto Exemplo">
-                                  </div>
-                                  
-                                  <div class="form-group">
-                                    <label for="quantidade-editar">Quantidade</label>
-                                    <input type="text" id="quantidade-editar" placeholder="Insira a Quantidade" value="10">
-                                  </div>
-                                  
-                                  <div class="form-group">
-                                    <label for="preco-editar">Preço</label>
-                                    <input type="text" id="preco-editar" placeholder="Insira o Preço" value="100">
-                                  </div>
-                                  
-                                  <div class="form-group">
-                                    <label for="fornecedor-editar">Fornecedor</label>
-                                    <input type="text" id="fornecedor-editar" placeholder="Insira o Fornecedor" value="Fornecedor Exemplo">
-                                  </div>
-                                  
-                                  <div class="form-buttons">
-                                    <button type="button" onclick="fecharFormularioCompra()">Cancelar</button>
-                                    <button type="submit">Salvar Alterações</button>
-                                  </div>
-                                </form>
-                              </div>
-                              
-                            
-                                 <div class="elemento" >
-                              <section  id="controle-vendas">
-                                <h2>Controle de Vendas</h2>
-                                 <button class="elemento btn btn-alterar">Alterar Clientes</button>
-                                    <button class="elemento btn btn-primary">Adicionar Venda</button>
-                                <div class="elemento item">
-                                    <img src="images/papel.jpeg" alt="Pedido 3">
-                                    <p>Venda 3459<br>CPF: 123456<br>End: H15</p>
-                                </div>
-                                <div class="elemento item">
-                                    <img src="images/papel.jpeg" alt="Pedido 4">
-                                    <p>Venda 3460<br>CPF: 654321<br>End: P33</p>
-                                </div>
-                             </div>
-                            
-                                 <div class="elemento">
-                             <section id="controle-pedidos">
-                                <h2>Controle de Pedidos</h2>
-                                 <button class="elemento btn btn-alterar">Alterar Pedidos</button>
-                                 <button class="elemento btn btn-primary">Adicionar Pedido</button>
-                                <div class="item">
-                                    <img src="images/papel.jpeg" alt="Pedido 1">
-                                    <p>Pedido 1<br>Valor: 15.000,15R$<br>End: 253</p>
-                                </div>
-                                <div class="item">
-                                    <img src="images/papel.jpeg" alt="Pedido 2">
-                                    <p>Pedido 2<br>Valor: 25.000,33<br>End: 336</p>
-                                </div>
-                             </div>
-            
-                                 
-                            <div class="elemento" >
-                             <section id="controle-clientes">
-                                <h2>Controle de Clientes</h2>
-                                    <button class="elemento btn btn-alterar">Alterar Clientes</button>
-                                    <button class="elemento btn btn-primary">Adicionar Cliente</button>
-                                <div class="elemento item">
-                                    <img src="images/cliente3.jpeg" alt="Cliente 3">
-                                    <p>Roberto Lima<br>CPF: 123456</p>
-                                </div>
-                                <div class="elemento item">
-                                    <img src="images/cliente4.jpeg" alt="Cliente 4">
-                                    <p>Jailson da Silva<br>CPF: 654321</p>
-                                </div>
+                            <div class="elemento form-group">
+                                <label for="marca">Marca</label>
+                                <input type="text" id="marca" placeholder="Insira a Marca" value="">
                             </div>
+                            <div class="elemento form-group">
+                                <label for="modelo">Modelo</label>
+                                <input type="text" id="modelo" placeholder="Insira o Modelo" value="">
+                            </div>
+                            <div class="elemento form-group">
+                                <label for="anoFabricacao">Ano de fabricação</label>
+                                <input type="text" id="anoFabricacao" placeholder="Insira o Ano de fabricação" value="">
+                            </div>
+                            <div class="elemento form-group">
+                                <label for="anoModelo">Ano do modelo</label>
+                                <input type="text" id="anoModelo" placeholder="Insira o Ano do modelo" value="">
+                            </div>
+                            <div class="elemento form-group">
+                                <label for="cor">Cor</label>
+                                <input type="text" id="cor" placeholder="Insira a Cor" value="">
+                            </div>
+                            <div class="elemento form-group">
+                                <label for="preco">Preço</label>
+                                <input type="text" id="preco" placeholder="Insira o Preço" value="R$ "
+                                    style="color: grey;">
+                            </div>
+                            <div class="elemento form-buttons">
+                                <button class="elemento" type="button" onclick="fecharFormulario()">Cancelar</button>
+                                <button class="elemento" type="submit">Salvar Alterações</button>
+                            </div>
+                        </form>
+                    </div>
+            </div>
+            </section>
+            <div id="adicionar-veiculo" class="elemento adicionar" style="display: none;">
+                <form class="elemento pop">
+                    <h2>Adicionar Veículo</h2><br>
+                    <div class="elemento form-group">
+                        <label for="chassi">Número do chassi</label>
+                        <input type="text" id="chassi" placeholder="Insira o Número do Chassi">
+                    </div>
+                    <div class="elemento form-group">
+                        <label for="placa">Placa</label>
+                        <input type="text" id="placa" placeholder="Insira a Placa">
+                    </div>
+                    <div class="elemento form-group">
+                        <label for="marca">Marca</label>
+                        <input type="text" id="marca" placeholder="Insira a Marca">
+                    </div>
+                    <div class="elemento form-group">
+                        <label for="modelo">Modelo</label>
+                        <input type="text" id="modelo" placeholder="Insira o Modelo">
+                    </div>
+                    <div class="elemento form-group">
+                        <label for="anoFabricacao">Ano de fabricação</label>
+                        <input type="text" id="anoFabricacao" placeholder="Insira o Ano de fabricação">
+                    </div>
+                    <div class="elemento form-group">
+                        <label for="anoModelo">Ano do modelo</label>
+                        <input type="text" id="anoModelo" placeholder="Insira o Ano do modelo">
+                    </div>
+                    <div class="elemento form-group">
+                        <label for="cor">Cor</label>
+                        <input type="text" id="cor" placeholder="Insira a Cor">
+                    </div>
+                    <div class="elemento form-group">
+                        <label for="preco">Preço</label>
+                        <input type="text" id="preco" placeholder="Insira o Preço">
+                    </div>
+                    <div class="elemento form-buttons">
+                        <button type="button" onclick="fecharFormulario()">Cancelar</button>
+                        <button type="submit">Adicionar</button>
+                    </div>
+                </form>
+            </div>
 
-                 <div class="elemento" >
+            <div class="elemento">
+                <section id="controle-compras">
+                    <h2>Controle de Compras</h2>
+                    <button class="elemento btn btn-alterar">Alterar Compra</button>
+                    <button class="elemento btn btn-primary">Adicionar Compra</button>
+
+                    <div class="item">
+                        <img src="images/hb20.jpeg" alt="HB20">
+                        <p>Hyundai HB20<br>End: J50</p>
+                    </div>
+
+                    <div class="item">
+                        <img src="images/ka.jpeg" alt="Ka">
+                        <p>Ford Ka<br>End: f15</p>
+                    </div>
+            </div>
+
+            <div id="adicionar-compra" class="adicionar" style="display: none;">
+                <h2>Adicionar Nova Compra</h2>
+                <form class="pop">
+                    <div class="form-group">
+                        <label for="produto">Produto</label>
+                        <input type="text" id="produto" placeholder="Insira o Produto">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="quantidade">Quantidade</label>
+                        <input type="text" id="quantidade" placeholder="Insira a Quantidade">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="preco-compra">Preço</label>
+                        <input type="text" id="preco-compra" placeholder="Insira o Preço">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="fornecedor">Fornecedor</label>
+                        <input type="text" id="fornecedor" placeholder="Insira o Fornecedor">
+                    </div>
+
+                    <div class="form-buttons">
+                        <button class="elemento" type="button" onclick="fecharFormularioCompra()">Cancelar</button>
+                        <button class="elemento" type="submit">Adicionar</button>
+                    </div>
+                </form>
+            </div>
+
+            <div id="editar-compra" class="editar" style="display: none;">
+                <h2>Editar Compra</h2>
+                <form class="pop">
+                    <div class="form-group">
+                        <label for="produto-editar">Produto</label>
+                        <input type="text" id="produto-editar" placeholder="Insira o Produto" value="Produto Exemplo">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="quantidade-editar">Quantidade</label>
+                        <input type="text" id="quantidade-editar" placeholder="Insira a Quantidade" value="10">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="preco-editar">Preço</label>
+                        <input type="text" id="preco-editar" placeholder="Insira o Preço" value="100">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="fornecedor-editar">Fornecedor</label>
+                        <input type="text" id="fornecedor-editar" placeholder="Insira o Fornecedor"
+                            value="Fornecedor Exemplo">
+                    </div>
+
+                    <div class="form-buttons">
+                        <button type="button" onclick="fecharFormularioCompra()">Cancelar</button>
+                        <button type="submit">Salvar Alterações</button>
+                    </div>
+                </form>
+            </div>
+
+
+            <div class="elemento">
+                <section id="controle-vendas">
+                    <h2>Controle de Vendas</h2>
+                    <button class="elemento btn btn-alterar">Alterar Clientes</button>
+                    <button class="elemento btn btn-primary">Adicionar Venda</button>
+                    <div class="elemento item">
+                        <img src="images/papel.jpeg" alt="Pedido 3">
+                        <p>Venda 3459<br>CPF: 123456<br>End: H15</p>
+                    </div>
+                    <div class="elemento item">
+                        <img src="images/papel.jpeg" alt="Pedido 4">
+                        <p>Venda 3460<br>CPF: 654321<br>End: P33</p>
+                    </div>
+            </div>
+
+            <div class="elemento">
+                <section id="controle-pedidos">
+                    <h2>Controle de Pedidos</h2>
+                    <button class="elemento btn btn-alterar">Alterar Pedidos</button>
+                    <button class="elemento btn btn-primary">Adicionar Pedido</button>
+                    <div class="item">
+                        <img src="images/papel.jpeg" alt="Pedido 1">
+                        <p>Pedido 1<br>Valor: 15.000,15R$<br>End: 253</p>
+                    </div>
+                    <div class="item">
+                        <img src="images/papel.jpeg" alt="Pedido 2">
+                        <p>Pedido 2<br>Valor: 25.000,33<br>End: 336</p>
+                    </div>
+            </div>
+
+
+            <div class="elemento">
+                <section id="controle-clientes">
+                    <h2>Controle de Clientes</h2>
+                    <button class="elemento btn btn-alterar">Alterar Clientes</button>
+                    <button class="elemento btn btn-primary">Adicionar Cliente</button>
+                    <div class="elemento item">
+                        <img src="images/cliente3.jpeg" alt="Cliente 3">
+                        <p>Roberto Lima<br>CPF: 123456</p>
+                    </div>
+                    <div class="elemento item">
+                        <img src="images/cliente4.jpeg" alt="Cliente 4">
+                        <p>Jailson da Silva<br>CPF: 654321</p>
+                    </div>
+            </div>
+
+            <div class="elemento">
                 <section id="controle-vendedores">
                     <h2>Controle de Vendedores</h2>
-                        <button class="elemento btn btn-alterar">Alterar Vendedores</button>
-                        <button class="elemento btn btn-primary">Adicionar Vendedor</button>
+                    <button class="elemento btn btn-alterar">Alterar Vendedores</button>
+                    <button class="elemento btn btn-primary">Adicionar Vendedor</button>
                     <div class="elemento item">
                         <img src="images/cliente1.jpeg" alt="Cliente 1">
                         <p>Vendedor 15<br>Nome: Alberto Ribeiro</p>
@@ -271,13 +276,13 @@
                         <img src="images/cliente2.jpeg" alt="Cliente 2">
                         <p>Vendedor 10<br>Nome: Joana D'arc</p>
                     </div>
-                 </div>
+            </div>
 
-                <div class="elemento" >
+            <div class="elemento">
                 <section id="controle-montadoras">
                     <h2>Controle de Montadoras</h2>
-                        <button class="elemento btn btn-alterar">Alterar Montadoras</button>
-                        <button class="elemento btn btn-primary">Adicionar Montadora</button>
+                    <button class="elemento btn btn-alterar">Alterar Montadoras</button>
+                    <button class="elemento btn btn-primary">Adicionar Montadora</button>
                     <div class="elemento item">
                         <img src="images/hyundai.jpeg" alt="Hyundai">
                         <p>Montadora 1<br>Nome: Hyundai</p>
@@ -290,6 +295,7 @@
             </div>
         </main>
     </div>
-   <script src="./script.js"></script>
+    <script src="./script.js"></script>
 </body>
+
 </html>
