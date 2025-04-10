@@ -31,7 +31,7 @@
 
 .sidebar {
     
-    margin-top: 50px;
+    margin-top: 69px;
     width: 270px;
     background-color: #f0f0f0;
     border-right: 1px solid #ddd;
@@ -43,7 +43,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-left: 20px;
 }
 
 .logobar img{
@@ -80,23 +79,20 @@ main {
     flex-direction: column;
     flex-wrap: nowrap;
     overflow-y: auto;
-    padding: 60px 0 0 0;
+    margin: 69px 0 0 0;
+    padding: 20px 0 0 0;
 }
 body{
+    min-width: 1170px;
+    display: flex;
+    height: 100vh;
     width: auto;
     margin: 0;
 }
 body img {
     border-radius: 100%;
 }
-/* Container geral */
-.container {
-    min-width: 1170px;
-    display: flex;
-    height: 100vh;
-    width: auto;
-    padding: 20px 0 0 0;
-}
+
 div {
     background-color: #ffffff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra nas divs */
