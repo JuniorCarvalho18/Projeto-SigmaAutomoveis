@@ -9,8 +9,6 @@ body{
     min-height: 676px;
     min-width: 0px;
     display: flex;
-    height: 100vh;
-    width: auto;
     margin: 0;
 }
 body img {
@@ -42,7 +40,9 @@ body img {
 }
 
 aside {
-    height: auto;
+    float: left;
+    position: fixed;
+    height: 100%;
     margin-top: 58px;
     background-color: #f0f0f0;
     border-right: 1px solid #ddd;
@@ -52,20 +52,17 @@ aside {
 }
 aside h2 {
     text-align: center;
-    font-size: 1em;
+    font-size: 100%;
+    margin: auto;
 }
 .logobar {
+    height: auto;
     padding: 5%;
     background-color: whitesmoke;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-
-.logobar img{
-    border-radius: 100%;
-}
-
 aside ul {
     height: auto;
     padding: 0;
@@ -89,7 +86,7 @@ aside ul li a {
     font-weight: bold;
 }
 aside ul li:hover {
-    box-shadow: inset 0px 5px 10px rgba(0, 0, 0, 0.1); /* Sombra interna */
+    box-shadow: inset 0px -5px 10px rgba(0, 0, 0, 0.1); /* Sombra interna */
 }
 aside ul li a:hover {
     color: #007bff;
@@ -97,13 +94,14 @@ aside ul li a:hover {
 
 /* Conteúdo principal */
 main {
-    height: auto;
+    float: right;
+    height: 100%;
     width: 100%;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
     overflow-y: auto;
-    margin: 69px 0 0 0;
+    margin: 69px 0 0 256px;
     padding: 20px 0 0 0;
 }
 
@@ -111,8 +109,7 @@ main {
 div {
     background-color: #ffffff;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra nas divs */
-    border-radius: 8px; /* Sombra com bordas arredondadas */
-    padding: 20px; 
+    border-radius: 8px; /* Sombra com bordas arredondadas */ 
 }
 main div{
     height: auto;
@@ -129,9 +126,6 @@ section {
     justify-content: space-between;
     align-content: space-around;
     padding: 20px;
-}
-h2 {
-    display: flex;
 }
 .section h2 {
     display: flex;
