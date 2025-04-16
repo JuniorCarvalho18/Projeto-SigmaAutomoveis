@@ -14,12 +14,7 @@ body{
 body img {
     border-radius: 100%;
 }
-.elemento:hover{
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-}
-.texto:hover{
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-}
+
 .header {
     width: 100%;
     padding: 10px;
@@ -85,12 +80,8 @@ aside ul li a {
     color: #333;
     font-weight: bold;
 }
-aside ul li:hover {
-    box-shadow: inset 0px -5px 10px rgba(0, 0, 0, 0.1); /* Sombra interna */
-}
-aside ul li a:hover {
-    color: #007bff;
-}
+
+
 
 /* Conteúdo principal */
 main {
@@ -250,4 +241,20 @@ section {
     margin-bottom: 20px;
     font-size: 2em;
     color: #333;
+}
+/*Animações*/
+
+.elemento:hover{
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    transform: scale(1.01);
+    transition: all 0.1s ease-in-out;
+}
+
+aside ul li a:hover {
+    color: #007bff;
+}
+aside ul li:hover {
+    transform: scale(1.01);
+    transition: all 0.1s ease-in-out;
+    box-shadow: inset 0px -5px 10px rgba(0, 0, 0, 0.1); /* Sombra interna */
 }
