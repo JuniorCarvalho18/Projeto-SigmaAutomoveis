@@ -1,5 +1,14 @@
 const mysql = require('mysql2/promise');
 
+function CloseMenu() {
+  if (menu.style.display == 'block') {
+    menu.style.display = 'none'
+    menu.style.transition = '0.5s'
+  } else {
+    menu.style.display = 'block'
+    menu.style.transition = '0.5s'
+  }
+}
 // Função para conectar ao banco de dados
 async function conectarBanco() {
   const connection = await mysql.createConnection({

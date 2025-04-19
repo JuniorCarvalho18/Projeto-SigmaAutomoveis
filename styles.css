@@ -16,6 +16,9 @@ body img {
 }
 
 .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
     padding: 10px;
     border-bottom: 1px solid #ddd;
@@ -27,7 +30,7 @@ body img {
 
 .header input[type="search"] {
     background-color: white;
-    width: 100%;
+    width: 98%;
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #ccc;
@@ -35,9 +38,11 @@ body img {
 }
 
 aside {
+    display: block;
     float: left;
     position: fixed;
     height: 100%;
+    max-width: 257px;
     margin-top: 58px;
     background-color: #f0f0f0;
     border-right: 1px solid #ddd;
@@ -53,6 +58,7 @@ aside h2 {
 .logobar {
     height: auto;
     padding: 5%;
+    margin-bottom: 1vh;
     background-color: whitesmoke;
     display: flex;
     flex-direction: column;
@@ -67,10 +73,13 @@ aside ul {
     align-items: center;
 }
 aside ul li {
-    width: 85%;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-evenly;
     list-style: none;
-    padding: 1vh 1vw 1vh 1vw;
-    margin: 1vh 0 1vh 0;
+    padding: 1vh 0 1vh 0;
+    margin: 1vh 1vw 1vh 1vw;
     box-shadow: inset 0px -1px 0px 0px rgba(0, 0, 0, 0.1); /* Sombra interna */
 }
 
@@ -92,8 +101,8 @@ main {
     flex-direction: column;
     flex-wrap: nowrap;
     overflow-y: auto;
-    margin: 69px 0 0 256px;
-    padding: 20px 0 0 0;
+    margin: 59px 0 0 256px;
+    padding: 20px;
 }
 
 
@@ -106,7 +115,7 @@ main div{
     height: auto;
     width: auto;
     padding: 27px;
-    margin: 0 30px 30px 30px;
+    margin: 0 0 20px 0;
 }
 section {
     height: 220px;
@@ -249,12 +258,27 @@ section {
     transform: scale(1.01);
     transition: all 0.1s ease-in-out;
 }
+#burguer:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: all 0.1s ease-in-out;
 
+}
 aside ul li a:hover {
     color: #007bff;
+
 }
 aside ul li:hover {
     transform: scale(1.01);
     transition: all 0.1s ease-in-out;
     box-shadow: inset 0px -5px 10px rgba(0, 0, 0, 0.1); /* Sombra interna */
+}
+
+@media screen and (max-width: 565px) {
+    .logobar {
+        display: none;
+    }
+    ul > li > a {
+        display: none;
+    }
 }

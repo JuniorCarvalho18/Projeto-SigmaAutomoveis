@@ -4,29 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rede Sigma Software System</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
     <!-- Barra superior -->
     <header class="header">
+        <i id="burguer" class="material-icons" onclick="CloseMenu()">menu</i>
         <input class="elemento" type="search" placeholder="Pesquisar">
     </header>
     
         <!-- Barra lateral -->
-        <aside>
+        <aside id="menu">
             <div class="logobar">
                 <img src="images/logo.jpeg" id="logo" class="elemento" alt="Logo Rede Sigma" height="100px" width="100px">
                 <h2 class="texto">Rede Sigma Software System</h2>
             </div>
                 <ul>
-                    <li class="texto"><a href="#controle-veiculos">Controle de Veículos</a></li>
-                    <li class="texto"><a href="#controle-compras">Controle de Compras</a></li>
-                    <li class="texto"><a href="#controle-vendas">Controle de Vendas</a></li>
-                    <li class="texto"><a href="#controle-pedidos">Controle de Pedidos</a></li>
-                    <li class="texto"><a href="#controle-clientes">Controle de Clientes</a></li>
-                    <li class="texto"><a href="#controle-vendedores">Controle de Vendedores</a></li>
-                    <li class="texto"><a href="#controle-montadoras">Controle de Montadoras</a></li>
+                    <li class="texto"><i class="material-icons">directions_car</i><a href="#controle-veiculos">Controle de Veículos</a></li>
+                    <li class="texto"><i class="material-icons">shopping_cart</i><a href="#controle-compras">Controle de Compras</a></li>
+                    <li class="texto"><i class="material-icons">paid</i><a href="#controle-vendas">Controle de Vendas</a></li>
+                    <li class="texto"><i class="material-icons">local_shipping</i><a href="#controle-pedidos">Controle de Pedidos</a></li>
+                    <li class="texto"><i class="material-icons">people</i><a href="#controle-clientes">Controle de Clientes</a></li>
+                    <li class="texto"><i class="material-icons">assignment_ind</i><a href="#controle-vendedores">Controle de Vendedores</a></li>
+                    <li class="texto"><i class="material-icons">factory</i><a href="#controle-montadoras">Controle de Montadoras</a></li>
                 </ul>
         </aside>
 
