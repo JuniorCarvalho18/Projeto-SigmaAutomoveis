@@ -121,7 +121,7 @@ section {
     height: 300px;
     width: 90%;
     padding: 30px;
-    margin: 0 0 20px 0;
+    margin-bottom: 20px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
