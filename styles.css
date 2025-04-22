@@ -5,7 +5,7 @@
 }
 body{
     display: flex;
-    height: 100%;
+    height: 100vh;
     width: 100%;
     min-height: 676px;
     min-width: 0px;
@@ -301,3 +301,4 @@ aside ul li:hover {
     #logobar, p  {
         display: none;
     }
+}
