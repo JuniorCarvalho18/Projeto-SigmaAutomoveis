@@ -59,7 +59,6 @@ aside h2 {
     width: auto;
     height: auto;
     padding: 5%;
-    margin-bottom: 1vh;
     background-color: whitesmoke;
     display: flex;
     flex-direction: column;
@@ -91,7 +90,6 @@ aside ul li a {
 }
 aside ul li i{
     padding: 1%;
-
 }
 
 
@@ -278,7 +276,15 @@ aside ul li:hover {
     box-shadow: inset 0px -5px 10px rgba(0, 0, 0, 0.1); /* Sombra interna */
 }
 
-@media screen and (max-width: 565px) {
+@media screen and (max-width: 952px) {
+    section{
+        text-align: center;
+        flex-wrap: nowrap;
+        height: auto;
+    }
+    .item {
+        margin: 1%;
+    }
     #logobar {
         display: none;
     }
