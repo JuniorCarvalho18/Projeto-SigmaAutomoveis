@@ -26,7 +26,6 @@ header {
     position: fixed; 
     background-color: white;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra na barra superior */
-    height: auto;
 }
 
 header > input[type="search"] {
@@ -43,10 +42,10 @@ aside {
     flex-direction: column;
     position: fixed;
     height: 100%;
-    max-width: 17%;
+    max-width: 15.64%;
     background-color: #f0f0f0;
     border-right: 1px solid #ddd;
-    margin-top: 58px;
+    margin-top: 3.8%;
     padding: 1vh 1vw 1vh 1vw;
     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
 
@@ -103,13 +102,13 @@ aside ul li p{
 /* Conteúdo principal */
 main {
     float: right;
-    width: 83%;
+    width: 84.36%;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
     overflow-y: auto;
     align-items: center;
-    margin: 59px 0 0 260px;
+    margin: 3.8% 0 0 15.64%;
     padding: 20px;
 }
 
@@ -284,12 +283,10 @@ aside ul li:hover {
 }
 
 @media screen and (max-width: 1060px) {
-    main{
-        margin: 67px 0 0 44px;
-    }
-    aside{
+    main, aside{
         margin-top: 67px;
     }
+
     section{
         text-align: center;
         flex-wrap: nowrap;
@@ -298,10 +295,6 @@ aside ul li:hover {
     .elemento {
         margin: 1%;
     }
-    #logobar {
+    #logobar, p  {
         display: none;
     }
-    p {
-        display: none;
-    }
-}
