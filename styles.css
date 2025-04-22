@@ -3,14 +3,13 @@
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
 }
-html,body{
+body{
     height: 100vh;
     width: 100vw;
     min-height: 676px;
     min-width: 0px;
     margin: 0;
     padding: 0;
-    display: flex;
 }
 body img {
     border-radius: 100%;
@@ -41,13 +40,12 @@ body img {
 aside {
     display: flex;
     flex-direction: column;
-    float: left;
     position: fixed;
     height: 100%;
     max-width: 17%;
-    margin-top: 58px;
     background-color: #f0f0f0;
     border-right: 1px solid #ddd;
+    margin-top: 58px;
     padding: 1vh 1vw 1vh 1vw;
     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
 
