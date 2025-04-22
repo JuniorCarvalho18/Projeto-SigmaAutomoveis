@@ -283,16 +283,19 @@ aside ul li:hover {
     box-shadow: inset 0px -5px 10px rgba(0, 0, 0, 0.1); /* Sombra interna */
 }
 
-@media screen and (max-width: 952px) {
+@media screen and (max-width: 1060px) {
     main{
-        margin-left: 44px;
+        margin: 67px 0 0 44px;
+    }
+    aside{
+        margin-top: 67px;
     }
     section{
         text-align: center;
         flex-wrap: nowrap;
         height: auto;
     }
-    .item {
+    .elemento {
         margin: 1%;
     }
     #logobar {
