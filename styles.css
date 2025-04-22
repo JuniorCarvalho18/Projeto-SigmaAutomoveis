@@ -102,7 +102,7 @@ aside ul li p{
 /* Conteúdo principal */
 main {
     float: right;
-    width: 84.36%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -283,8 +283,11 @@ aside ul li:hover {
 }
 
 @media screen and (max-width: 1060px) {
-    main, aside{
+    aside {
         margin-top: 67px;
+    }
+    main{
+        margin: 67px 0 0 44px;
     }
 
     section{
