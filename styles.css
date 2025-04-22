@@ -4,8 +4,9 @@
     font-family: 'Roboto', sans-serif;
 }
 body{
-    height: 100vh;
-    width: 100vw;
+    display: flex;
+    height: 100%;
+    width: 100%;
     min-height: 676px;
     min-width: 0px;
     margin: 0;
@@ -83,6 +84,9 @@ aside ul li {
 }
 
 aside ul li a {
+    display: flex;
+    align-items: center;
+    width: 100%;
     text-align: left;
     text-decoration: none;
     color: #333;
@@ -92,6 +96,9 @@ aside ul li i{
     padding: 1%;
 }
 
+aside ul li p{
+    margin: 0;
+}
 
 /* Conteúdo principal */
 main {
@@ -277,6 +284,9 @@ aside ul li:hover {
 }
 
 @media screen and (max-width: 952px) {
+    main{
+        margin-left: 44px;
+    }
     section{
         text-align: center;
         flex-wrap: nowrap;
@@ -288,7 +298,7 @@ aside ul li:hover {
     #logobar {
         display: none;
     }
-    ul > li > a {
+    p {
         display: none;
     }
 }
