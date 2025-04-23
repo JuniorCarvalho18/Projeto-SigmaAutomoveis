@@ -55,6 +55,11 @@ conectarBanco().then(connection => {
   console.log('Erro ao conectar ao banco:', err);
 });
 
+// Função para fechar qualquer formulário de veiculo
+function fecharFormulario() {
+  document.querySelectorAll('.forms').forEach(div => div.style.display = 'none');
+}
+
 function adicionarVeiculo() {
   document.getElementById('adicionar-veiculo').style.display = 'block';
   document.getElementById('editar-veiculo').style.display = 'none';
@@ -66,11 +71,6 @@ function editarVeiculo() {
   document.getElementById('adicionar-veiculo').style.display = 'none';
 }
 
-// Função para fechar qualquer formulário de veiculo
-function fecharFormulario() {
-  document.getElementById('adicionar-veiculo').style.display = 'none';
-  document.getElementById('editar-veiculo').style.display = 'none';
-}
 
 // Função para abrir o formulário de adicionar compra
 function adicionarCompra() {
