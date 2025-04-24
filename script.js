@@ -55,7 +55,7 @@ conectarBanco().then(connection => {
   console.log('Erro ao conectar ao banco:', err);
 });
 
-// Função para fechar qualquer formulário de veiculo
+// Função para fechar/Cancelar qualquer formulário de veiculo
 function fecharFormulario() {
   document.querySelectorAll('.forms').forEach(div => div.style.display = 'none');
 }
@@ -84,26 +84,10 @@ function editarCompra() {
   document.getElementById('adicionar-compra').style.display = 'none';
 }
 
-// Função para fechar qualquer formulário de compra
-function fecharFormularioCompra() {
-  document.getElementById('adicionar-compra').style.display = 'none';
-  document.getElementById('editar-compra').style.display = 'none';
-}
-
-// Função para fechar o formulário de edição de compra
-function fecharEdicaoCompra() {
-  document.getElementById('editar-compra').style.display = 'none';
-}
-
-// Função para fechar qualquer formulário de vendas, pedidos, clientes e vendedores
-function fecharEdicao() {
-  // Aqui você pode adicionar lógicas para outros formulários se necessário
-  console.log("Fechar edição");
-}
 
 // Função para manipular a exibição de formulários para outras seções
-document.querySelector('.btn-alterar-veiculo').addEventListener('click', editarVeiculo);
-document.querySelector('.btn-primary').addEventListener('click', adicionarVeiculo);
+document.querySelectorAll('.btn-alterar').addEventListener('click', editarVeiculo);
+document.querySelectorAll('.btn-primary').addEventListener('click', adicionarVeiculo);
 
-document.querySelector('.btn-alterar-compra').addEventListener('click', editarCompra);
-document.querySelector('.btn-primary').addEventListener('click', adicionarCompra);
+document.querySelectorAll('.btn-alterar').addEventListener('click', editarCompra);
+document.querySelectorAll('.btn-primary').addEventListener('click', adicionarCompra);

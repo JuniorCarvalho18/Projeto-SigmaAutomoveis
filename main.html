@@ -53,7 +53,7 @@
 
             <div id="editar-veiculo" class="forms" style="display: none;">
             <form class="pop">
-                <h2>Editar Veículo</h2><br>
+                <h2>Editar Veículo</h2>
                 <div class="form group">
                     <label for="chassi">Número do chassi</label>
                     <input type="text" id="chassi" placeholder="Insira o Número do Chassi" value="">
@@ -138,8 +138,8 @@
 
         <section id="controle-compras" class="elemento">
                     <h2>Controle de Compras</h2>
-                    <button class="elemento btn btn-alterar">Alterar Compra</button>
-                    <button class="elemento btn btn-primary">Adicionar Compra</button>
+                    <button class="elemento btn btn-alterar" onclick="editarCompra()">Alterar Compra</button>
+                    <button class="elemento btn btn-primary" onclick="adicionarCompra()">Adicionar Compra</button>
 
                     <div class="elemento item">
                         <img src="images/hb20.jpeg" alt="HB20">
@@ -152,67 +152,69 @@
                     </div>
             </div>
 
-            <div id="adicionar-compra" class="adicionar" style="display: none;">
-                <h2>Adicionar Nova Compra</h2>
-                <form class="pop">
-                    <div class="form-group">
-                        <label for="produto">Produto</label>
-                        <input type="text" id="produto" placeholder="Insira o Produto">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="quantidade">Quantidade</label>
-                        <input type="text" id="quantidade" placeholder="Insira a Quantidade">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="preco-compra">Preço</label>
-                        <input type="text" id="preco-compra" placeholder="Insira o Preço">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="fornecedor">Fornecedor</label>
-                        <input type="text" id="fornecedor" placeholder="Insira o Fornecedor">
-                    </div>
-
-                    <div class="form-buttons">
-                        <button class="elemento" type="button" onclick="fecharFormularioCompra()">Cancelar</button>
-                        <button class="elemento" type="submit">Adicionar</button>
-                    </div>
-                </form>
-            </div>
-
-            <div id="editar-compra" class="editar" style="display: none;">
-                <h2>Editar Compra</h2>
-                <form class="pop">
-                    <div class="form-group">
-                        <label for="produto-editar">Produto</label>
-                        <input type="text" id="produto-editar" placeholder="Insira o Produto" value="Produto Exemplo">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="quantidade-editar">Quantidade</label>
-                        <input type="text" id="quantidade-editar" placeholder="Insira a Quantidade" value="10">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="preco-editar">Preço</label>
-                        <input type="text" id="preco-editar" placeholder="Insira o Preço" value="100">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="fornecedor-editar">Fornecedor</label>
-                        <input type="text" id="fornecedor-editar" placeholder="Insira o Fornecedor"
-                            value="Fornecedor Exemplo">
-                    </div>
-
-                    <div class="form-buttons">
-                        <button type="button" onclick="fecharFormularioCompra()">Cancelar</button>
-                        <button type="submit">Salvar Alterações</button>
-                    </div>
-                </form>
-            </div>
+            
         </section>
+
+            <div id="editar-compra" class="forms" style="display: none;">
+            <form class="pop">
+                <h2>Editar Compra</h2>
+                <div class="form group">
+                    <label for="produto-editar">Produto</label>
+                    <input type="text" id="produto-editar" placeholder="Insira o Produto" value="Produto Exemplo">
+                </div>
+
+                <div class="form group">
+                    <label for="quantidade-editar">Quantidade</label>
+                    <input type="text" id="quantidade-editar" placeholder="Insira a Quantidade" value="10">
+                </div>
+
+                <div class="form group">
+                    <label for="preco-editar">Preço</label>
+                    <input type="text" id="preco-editar" placeholder="Insira o Preço" value="100">
+                </div>
+
+                <div class="form group">
+                    <label for="fornecedor-editar">Fornecedor</label>
+                    <input type="text" id="fornecedor-editar" placeholder="Insira o Fornecedor"
+                        value="Fornecedor Exemplo">
+                </div>
+
+                <div class="form buttons">
+                    <button class="elemento" onclick="fecharFormulario()">Cancelar</button>
+                    <button class="elemento" type="submit">Salvar Alterações</button>
+                </div>
+            </form>
+            </div>
+
+            <div id="adicionar-compra" class="forms" style="display: none;">
+            <form class="pop">
+                <h2>Adicionar Nova Compra</h2>
+                <div class="form group">
+                    <label for="produto">Produto</label>
+                    <input type="text" id="produto" placeholder="Insira o Produto">
+                </div>
+
+                <div class="form group">
+                    <label for="quantidade">Quantidade</label>
+                    <input type="text" id="quantidade" placeholder="Insira a Quantidade">
+                </div>
+
+                <div class="form group">
+                    <label for="preco-compra">Preço</label>
+                    <input type="text" id="preco-compra" placeholder="Insira o Preço">
+                </div>
+
+                <div class="form group">
+                    <label for="fornecedor">Fornecedor</label>
+                    <input type="text" id="fornecedor" placeholder="Insira o Fornecedor">
+                </div>
+
+                <div class="form buttons">
+                    <button class="elemento" onclick="fecharFormulario()">Cancelar</button>
+                    <button class="elemento" type="submit">Adicionar</button>
+                </div>
+            </form>
+            </div>
 
         <section id="controle-vendas" class="elemento">
                     <h2>Controle de Vendas</h2>
