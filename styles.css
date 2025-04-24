@@ -39,7 +39,7 @@ header > input[type="search"] {
 
 aside {
     display: flex;
-    flex-direction: column;
+    flex-flow: column wrap;
     position: fixed;
     height: 100%;
     max-width: 16.1%;
@@ -105,9 +105,8 @@ main {
     float: right;
     width: 100%;
     display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    overflow-y: auto;
+    flex-flow: column nowrap;
+    overflow-y: initial;
     align-items: center;
     margin: 3.8% 0 0 15.64%;
     padding: 20px;
@@ -288,11 +287,13 @@ aside ul li:hover {
 
     section{
         text-align: center;
-        flex-wrap: nowrap;
         height: auto;
     }
     .elemento {
         margin: 1%;
+    }
+    .item{
+        margin: 1% auto 1% auto;
     }
     #logobar, p  {
         display: none;
