@@ -1,12 +1,14 @@
 const mysql = require('mysql2/promise');
 
-function CloseMenu() {
-  if (menu.style.display == 'block') {
-    menu.style.display = 'none'
-    menu.style.transition = '0.5s'
+function CloseAside() {
+  if (sidebar.style.display == 'block') {
+    sidebar.style.display = 'none'
+    sidebar.style.transition = '0.5s'
+    document.querySelector('main').style.marginLeft = '0px';
   } else {
-    menu.style.display = 'block'
-    menu.style.transition = '0.5s'
+    sidebar.style.display = 'block'
+    sidebar.style.transition = '0.5s'
+    document.querySelector('main').style.marginLeft = '15.64%';
   }
 }
 // Função para conectar ao banco de dados
@@ -55,7 +57,7 @@ conectarBanco().then(connection => {
   console.log('Erro ao conectar ao banco:', err);
 });
 
-// Função para fechar/Cancelar qualquer formulário de veiculo
+// Função para fechar/Cancelar qualquer formulário
 function fecharFormulario() {
   document.querySelectorAll('.forms').forEach(div => div.style.display = 'none');
 }
