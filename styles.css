@@ -29,6 +29,7 @@ header {
 }
 
 header > input[type="search"] {
+    margin: 0;
     background-color: white;
     width: 98%;
     padding: 10px;
@@ -45,7 +46,7 @@ aside {
     max-width: 16.1%;
     background-color: #f0f0f0;
     border-right: 1px solid #ddd;
-    margin-top: 3.8%;
+    margin-top: 57px;
     padding: 1vh 1vw 1vh 1vw;
     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
 
@@ -276,9 +277,6 @@ aside ul li:hover {
 
 /*Responsividade*/
 @media screen and (max-width: 1060px) {
-    aside {
-        margin-top: 67px;
-    }
     main{
         margin: 67px 0 0 44px;
     }

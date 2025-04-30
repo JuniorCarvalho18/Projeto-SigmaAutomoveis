@@ -5,38 +5,40 @@ function CloseAside() {
   const paragrafo = sidebar.querySelectorAll('p');
   const linha = sidebar.querySelectorAll('li');
   const ancora = sidebar.querySelectorAll('a');
-  if (logobar.style.display == 'flex') {
-    logobar.style.display = 'none'
-    logobar.style.transition = '0.5s'
-    paragrafo.forEach(p => {
-      p.style.display = 'none';
-      p.style.transition = '0.5s'
-    });
-    linha.forEach( li => {
-      li.style.width = 'auto';
-      li.style.margin = 'auto'
-    });
-    ancora.forEach( a => {
-      a.style.width = 'auto';
-    });
-    document.querySelector('main').style.marginLeft = '0px';
-  } else {
-    logobar.style.display = 'flex'
-    logobar.style.transition = '0.5s'
-    paragrafo.forEach(p => {
-      p.style.display = 'block';
-      p.style.transition = '0.5s'
-    });
-    linha.forEach( li => {
-      li.style.width = '100%';
-      li.style.margin = '1vh 1vw';
-    });
-    ancora.forEach( a => {
-      a.style.width = '100%';
-    });
-    
-    document.querySelector('main').style.marginLeft = '15.64%';
-  }
+
+    if (logobar.style.display == 'flex') {
+      logobar.style.display = 'none'
+      logobar.style.transition = '0.5s'
+      paragrafo.forEach(p => {
+        p.style.display = 'none';
+        p.style.transition = '0.5s'
+      });
+      linha.forEach( li => {
+        li.style.width = 'auto';
+        li.style.margin = 'auto'
+      });
+      ancora.forEach( a => {
+        a.style.width = 'auto';
+      });
+      
+      document.querySelector('main').style.marginLeft = '0px';
+    } else if (window.innerWidth > 1060) {
+      logobar.style.display = 'flex'
+      logobar.style.transition = '0.5s'
+      paragrafo.forEach(p => {
+        p.style.display = 'block';
+        p.style.transition = '0.5s'
+      });
+      linha.forEach( li => {
+        li.style.width = '100%';
+        li.style.margin = '1vh 1vw';
+      });
+      ancora.forEach( a => {
+        a.style.width = '100%';
+      });
+      
+      document.querySelector('main').style.marginLeft = '15.64%';
+    }
 }
 
 // Função para conectar ao banco de dados
