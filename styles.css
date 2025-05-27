@@ -1,7 +1,9 @@
 * {
-   
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
+}
+html{
+    scroll-behavior: smooth;
 }
 body{
     display: flex;
@@ -168,7 +170,7 @@ section h2 {
 }
 
 .item img {
-    max-width: 80px;
+    width: 80px;
     height: 80px;
     border-radius: 100%;
 }
