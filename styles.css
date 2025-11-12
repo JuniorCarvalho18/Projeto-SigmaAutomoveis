@@ -276,6 +276,7 @@ section h2 {
 }
 aside ul li a:hover, aside ul li a:target-current {
     color: #007bff;
+    transition: all 0.1s ease-in-out;
 
 }
 aside ul li:hover {
