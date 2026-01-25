@@ -12,282 +12,136 @@
 <body>
     <!-- Barra superior -->
     <header>
-        <i id="burguer" class="material-icons" onclick="CloseAside()">menu</i>
-        <input class="elemento" type="search" placeholder="Pesquisar">
+        <i id="burguer" class="material-icons" onclick="toggleSidebar()">menu</i>
+        <input type="search" id="searchInput" placeholder="Pesquisar..." onkeyup="filtrarItens()">
     </header>
     
-        <!-- Barra lateral -->
+    <!-- Barra lateral -->
     <aside id="sidebar">
-            <div id="logobar">
-                <img src="../assets/img//logo.jpeg" id="logo" class="elemento" alt="Logo Rede Sigma" height="100px" width="100px">
-                <h2 class="texto">Rede Sigma Software System</h2>
-            </div>
-                <ul>
-                    <li class="texto"><a href="#controle-veiculos"><i class="material-icons">directions_car</i><p>Controle de Veículos</p></a></li>
-                    <li class="texto"><a href="#controle-compras"><i class="material-icons">shopping_cart</i><p>Controle de Compras</p></a></li>
-                    <li class="texto"><a href="#controle-vendas"><i class="material-icons">paid</i><p>Controle de Vendas</p></a></li>
-                    <li class="texto"><a href="#controle-pedidos"><i class="material-icons">local_shipping</i><p>Controle de Pedidos</p></a></li>
-                    <li class="texto"><a href="#controle-clientes"><i class="material-icons">people</i><p>Controle de Clientes</p></a></li>
-                    <li class="texto"><a href="#controle-vendedores"><i class="material-icons">assignment_ind</i><p>Controle de Vendedores</p></a></li>
-                    <li class="texto"><a href="#controle-montadoras"><i class="material-icons">factory</i><p>Controle de Montadoras</p></a></li>
-                </ul>
+        <div id="logobar">
+            <img src="../assets/img/logo.jpeg" alt="Logo Rede Sigma">
+            <h2>Rede Sigma Software System</h2>
+        </div>
+        <ul>
+            <li><a href="#controle-veiculos"><i class="material-icons">directions_car</i><p>Controle de Veículos</p></a></li>
+            <li><a href="#controle-compras"><i class="material-icons">shopping_cart</i><p>Controle de Compras</p></a></li>
+            <li><a href="#controle-vendas"><i class="material-icons">paid</i><p>Controle de Vendas</p></a></li>
+            <li><a href="#controle-pedidos"><i class="material-icons">local_shipping</i><p>Controle de Pedidos</p></a></li>
+            <li><a href="#controle-clientes"><i class="material-icons">people</i><p>Controle de Clientes</p></a></li>
+            <li><a href="#controle-vendedores"><i class="material-icons">assignment_ind</i><p>Controle de Vendedores</p></a></li>
+            <li><a href="#controle-montadoras"><i class="material-icons">factory</i><p>Controle de Montadoras</p></a></li>
+        </ul>
     </aside>
 
-        <!-- Conteúdo principal -->
-    <main>
-
-        <section id="controle-veiculos" class="elemento">
-
-                    <h2>Controle de Veículos</h2>
-                    <button class="elemento btn btn-alterar" onclick="editarVeiculo()">Alterar Veículos</button>
-                    <button class="elemento btn btn-primary" onclick="adicionarVeiculo()">Adicionar Veículos</button>
-                        <div class="elemento item">
-                        <img src="../assets/img//argo.jpeg" alt="Argo">
-                        <p>Veículo 1<br>Marca: Fiat</p>
-                        </div>
-                        <div class=" elemento item">
-                        <img src="../assets/img//gol.jpeg" alt="Gol">
-                        <p>Veículo 2<br>Marca: Volkswagen</p>
-                        </div>
-            
-        </section>
-
-            <div id="editar-veiculo" class="forms" style="display: none;">
-            <form class="pop">
-                <h2>Editar Veículo</h2>
-                <div class="form group">
-                    <label for="chassi">Número do chassi</label>
-                    <input type="text" id="chassi" placeholder="Insira o Número do Chassi" value="">
+    <!-- Conteúdo principal -->
+    <main id="mainContent">
+        <!-- Veículos -->
+        <section id="controle-veiculos">
+            <div class="section-left">
+                <h2>Controle de Veículos</h2>
+                <div class="section-controls">
+                    <button class="btn btn-alterar" onclick="abrirModal('veiculo')">Alterar Veículos</button>
+                    <button class="btn btn-primary" onclick="abrirModal('veiculo')">Adicionar Veículos</button>
                 </div>
-                <div class="form group">
-                    <label for="placa">Placa</label>
-                    <input type="text" id="placa" placeholder="Insira a Placa" value="">
-                </div>
-                <div class="form group">
-                    <label for="marca">Marca</label>
-                    <input type="text" id="marca" placeholder="Insira a Marca" value="">
-                </div>
-                <div class="form group">
-                    <label for="modelo">Modelo</label>
-                    <input type="text" id="modelo" placeholder="Insira o Modelo" value="">
-                </div>
-                <div class="form group">
-                    <label for="anoFabricacao">Ano de fabricação</label>
-                    <input type="text" id="anoFabricacao" placeholder="Insira o Ano de fabricação" value="">
-                </div>
-                <div class="form group">
-                    <label for="anoModelo">Ano do modelo</label>
-                    <input type="text" id="anoModelo" placeholder="Insira o Ano do modelo" value="">
-                </div>
-                <div class="form group">
-                    <label for="cor">Cor</label>
-                    <input type="text" id="cor" placeholder="Insira a Cor" value="">
-                </div>
-                <div class="form group">
-                    <label for="preco">Preço</label>
-                    <input type="text" id="preco" placeholder="Insira o Preço" value="R$ "
-                        style="color: grey;">
-                </div>
-                <div class="form buttons">
-                    <button class="elemento" onclick="fecharFormulario()">Cancelar</button>
-                    <button class="elemento" type="submit">Salvar Alterações</button>
-                </div>
-            </form>
             </div>
-
-            <div id="adicionar-veiculo" class="forms" style="display: none;">
-            <form class="pop">
-                <h2>Adicionar Veículo</h2>
-                <div class="form group">
-                    <label for="chassi">Número do chassi</label>
-                    <input type="text" id="chassi" placeholder="Insira o Número do Chassi">
-                </div>
-                <div class="form group">
-                    <label for="placa">Placa</label>
-                    <input type="text" id="placa" placeholder="Insira a Placa">
-                </div>
-                <div class="form group">
-                    <label for="marca">Marca</label>
-                    <input type="text" id="marca" placeholder="Insira a Marca">
-                </div>
-                <div class="form group">
-                    <label for="modelo">Modelo</label>
-                    <input type="text" id="modelo" placeholder="Insira o Modelo">
-                </div>
-                <div class="form group">
-                    <label for="anoFabricacao">Ano de fabricação</label>
-                    <input type="text" id="anoFabricacao" placeholder="Insira o Ano de fabricação">
-                </div>
-                <div class="form group">
-                    <label for="anoModelo">Ano do modelo</label>
-                    <input type="text" id="anoModelo" placeholder="Insira o Ano do modelo">
-                </div>
-                <div class="form group">
-                    <label for="cor">Cor</label>
-                    <input type="text" id="cor" placeholder="Insira a Cor">
-                </div>
-                <div class="form group">
-                    <label for="preco">Preço</label>
-                    <input type="text" id="preco" placeholder="Insira o Preço">
-                </div>
-                <div class="form buttons">
-                    <button class="elemento" onclick="fecharFormulario()">Cancelar</button>
-                    <button class="elemento" type="submit">Adicionar</button>
-                </div>
-            </form>
+            <div class="section-right">
+                <div id="veiculos-list" class="carousel"></div>
             </div>
+        </section>
 
-        <section id="controle-compras" class="elemento">
-                    <h2>Controle de Compras</h2>
-                    <button class="elemento btn btn-alterar" onclick="editarCompra()">Alterar Compra</button>
-                    <button class="elemento btn btn-primary" onclick="adicionarCompra()">Adicionar Compra</button>
-
-                    <div class="elemento item">
-                        <img src="../assets/img//hb20.jpeg" alt="HB20">
-                        <p>Hyundai HB20<br>End: J50</p>
-                    </div>
-
-                    <div class="elemento item">
-                        <img src="../assets/img//ka.jpeg" alt="Ka">
-                        <p>Ford Ka<br>End: f15</p>
-                    </div>
+        <!-- Compras -->
+        <section id="controle-compras">
+            <div class="section-left">
+                <h2>Controle de Compras</h2>
+                <div class="section-controls">
+                    <button class="btn btn-alterar" onclick="abrirModal('compra')">Alterar Compra</button>
+                    <button class="btn btn-primary" onclick="abrirModal('compra')">Adicionar Compra</button>
+                </div>
             </div>
-
-            
-        </section>
-
-            <div id="editar-compra" class="forms" style="display: none;">
-            <form class="pop">
-                <h2>Editar Compra</h2>
-                <div class="form group">
-                    <label for="produto-editar">Produto</label>
-                    <input type="text" id="produto-editar" placeholder="Insira o Produto" value="Produto Exemplo">
-                </div>
-
-                <div class="form group">
-                    <label for="quantidade-editar">Quantidade</label>
-                    <input type="text" id="quantidade-editar" placeholder="Insira a Quantidade" value="10">
-                </div>
-
-                <div class="form group">
-                    <label for="preco-editar">Preço</label>
-                    <input type="text" id="preco-editar" placeholder="Insira o Preço" value="100">
-                </div>
-
-                <div class="form group">
-                    <label for="fornecedor-editar">Fornecedor</label>
-                    <input type="text" id="fornecedor-editar" placeholder="Insira o Fornecedor"
-                        value="Fornecedor Exemplo">
-                </div>
-
-                <div class="form buttons">
-                    <button class="elemento" onclick="fecharFormulario()">Cancelar</button>
-                    <button class="elemento" type="submit">Salvar Alterações</button>
-                </div>
-            </form>
+            <div class="section-right">
+                <div id="compras-list" class="carousel"></div>
             </div>
+        </section>
 
-            <div id="adicionar-compra" class="forms" style="display: none;">
-            <form class="pop">
-                <h2>Adicionar Nova Compra</h2>
-                <div class="form group">
-                    <label for="produto">Produto</label>
-                    <input type="text" id="produto" placeholder="Insira o Produto">
+        <!-- Vendas -->
+        <section id="controle-vendas">
+            <div class="section-left">
+                <h2>Controle de Vendas</h2>
+                <div class="section-controls">
+                    <button class="btn btn-alterar" onclick="abrirModal('venda')">Alterar Vendas</button>
+                    <button class="btn btn-primary" onclick="abrirModal('venda')">Adicionar Venda</button>
                 </div>
-
-                <div class="form group">
-                    <label for="quantidade">Quantidade</label>
-                    <input type="text" id="quantidade" placeholder="Insira a Quantidade">
-                </div>
-
-                <div class="form group">
-                    <label for="preco-compra">Preço</label>
-                    <input type="text" id="preco-compra" placeholder="Insira o Preço">
-                </div>
-
-                <div class="form group">
-                    <label for="fornecedor">Fornecedor</label>
-                    <input type="text" id="fornecedor" placeholder="Insira o Fornecedor">
-                </div>
-
-                <div class="form buttons">
-                    <button class="elemento" onclick="fecharFormulario()">Cancelar</button>
-                    <button class="elemento" type="submit">Adicionar</button>
-                </div>
-            </form>
             </div>
-
-        <section id="controle-vendas" class="elemento">
-                    <h2>Controle de Vendas</h2>
-                    <button class="elemento btn btn-alterar">Alterar Clientes</button>
-                    <button class="elemento btn btn-primary">Adicionar Venda</button>
-                    <div class="elemento item">
-                        <img src="../assets/img//papel.jpeg" alt="Pedido 3">
-                        <p>Venda 3459<br>CPF: 123456<br>End: H15</p>
-                    </div>
-                    <div class="elemento item">
-                        <img src="../assets/img//papel.jpeg" alt="Pedido 4">
-                        <p>Venda 3460<br>CPF: 654321<br>End: P33</p>
-                    </div>
-        </section>
-        <section id="controle-pedidos" class="elemento">
-                    <h2>Controle de Pedidos</h2>
-                    <button class="elemento btn btn-alterar">Alterar Pedidos</button>
-                    <button class="elemento btn btn-primary">Adicionar Pedido</button>
-                    <div class="elemento item">
-                        <img src="../assets/img//papel.jpeg" alt="Pedido 1">
-                        <p>Pedido 1<br>Valor: 15.000,15R$<br>End: 253</p>
-                    </div>
-                    <div class="elemento item">
-                        <img src="../assets/img//papel.jpeg" alt="Pedido 2">
-                        <p>Pedido 2<br>Valor: 25.000,33<br>End: 336</p>
-                    </div>
-
-        </section>
-        <section id="controle-clientes" class="elemento">
-                    <h2>Controle de Clientes</h2>
-                    <button class="elemento btn btn-alterar">Alterar Clientes</button>
-                    <button class="elemento btn btn-primary">Adicionar Cliente</button>
-                    <div class="elemento item">
-                        <img src="../assets/img//cliente3.jpeg" alt="Cliente 3">
-                        <p>Roberto Lima<br>CPF: 123456</p>
-                    </div>
-                    <div class="elemento item">
-                        <img src="../assets/img//cliente4.jpeg" alt="Cliente 4">
-                        <p>Jailson da Silva<br>CPF: 654321</p>
-                    </div>
+            <div class="section-right">
+                <div id="vendas-list" class="carousel"></div>
+            </div>
         </section>
 
-        <section id="controle-vendedores" class="elemento">
-                    <h2>Controle de Vendedores</h2>
-                    <button class="elemento btn btn-alterar">Alterar Vendedores</button>
-                    <button class="elemento btn btn-primary">Adicionar Vendedor</button>
-                    <div class="elemento item">
-                        <img src="../assets/img//cliente1.jpeg" alt="Cliente 1">
-                        <p>Vendedor 15<br>Nome: Alberto Ribeiro</p>
-                    </div>
-                    <div class="elemento item">
-                        <img src="../assets/img//cliente2.jpeg" alt="Cliente 2">
-                        <p>Vendedor 10<br>Nome: Joana D'arc</p>
-                    </div>
+        <!-- Pedidos -->
+        <section id="controle-pedidos">
+            <div class="section-left">
+                <h2>Controle de Pedidos</h2>
+                <div class="section-controls">
+                    <button class="btn btn-alterar" onclick="abrirModal('pedido')">Alterar Pedidos</button>
+                    <button class="btn btn-primary" onclick="abrirModal('pedido')">Adicionar Pedido</button>
+                </div>
+            </div>
+            <div class="section-right">
+                <div id="pedidos-list" class="carousel"></div>
+            </div>
         </section>
 
-        <section id="controle-montadoras" class="elemento">
-                    <h2>Controle de Montadoras</h2>
-                    <button class="elemento btn btn-alterar">Alterar Montadoras</button>
-                    <button class="elemento btn btn-primary">Adicionar Montadora</button>
-                    <div class="elemento item">
-                        <img src="../assets/img//hyundai.jpeg" alt="Hyundai">
-                        <p>Montadora 1<br>Nome: Hyundai</p>
-                    </div>
-                    <div class="elemento item">
-                        <img src="../assets/img//toyota.jpeg" alt="toyota">
-                        <p>Montadora 2<br>Nome: toyota</p>
-                    </div>
+        <!-- Clientes -->
+        <section id="controle-clientes">
+            <div class="section-left">
+                <h2>Controle de Clientes</h2>
+                <div class="section-controls">
+                    <button class="btn btn-alterar" onclick="abrirModal('cliente')">Alterar Clientes</button>
+                    <button class="btn btn-primary" onclick="abrirModal('cliente')">Adicionar Cliente</button>
+                </div>
+            </div>
+            <div class="section-right">
+                <div id="clientes-list" class="carousel"></div>
+            </div>
+        </section>
+
+        <!-- Vendedores -->
+        <section id="controle-vendedores">
+            <div class="section-left">
+                <h2>Controle de Vendedores</h2>
+                <div class="section-controls">
+                    <button class="btn btn-alterar" onclick="abrirModal('vendedor')">Alterar Vendedores</button>
+                    <button class="btn btn-primary" onclick="abrirModal('vendedor')">Adicionar Vendedor</button>
+                </div>
+            </div>
+            <div class="section-right">
+                <div id="vendedores-list" class="carousel"></div>
+            </div>
+        </section>
+
+        <!-- Montadoras -->
+        <section id="controle-montadoras">
+            <div class="section-left">
+                <h2>Controle de Montadoras</h2>
+                <div class="section-controls">
+                    <button class="btn btn-alterar" onclick="abrirModal('montadora')">Alterar Montadoras</button>
+                    <button class="btn btn-primary" onclick="abrirModal('montadora')">Adicionar Montadora</button>
+                </div>
+            </div>
+            <div class="section-right">
+                <div id="montadoras-list" class="carousel"></div>
+            </div>
         </section>
     </main>
-   
-    <script src="./script.js"></script>
-</body>
 
+    <!-- Modal Universal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <h2 id="modal-title"></h2>
+            <div id="modal-form"></div>
+        </div>
+    </div>
+
+    <script src="../assets/js/script.js"></script>
+</body>
 </html>
