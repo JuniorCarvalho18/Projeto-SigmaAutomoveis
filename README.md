@@ -67,18 +67,20 @@ projeto-sigmaautomoveis/
 Como o projeto utiliza LocalStorage e caminhos relativos, recomenda-se rodar através de um servidor local simples para evitar bloqueios de segurança do navegador (CORS).
 
 ### Pré-requisitos
-* Um navegador moderno (Chrome, Firefox, Edge).
+* Um navegador moderno (Ex: Chrome, Firefox, Edge).
 
 * Um editor de código (VS Code recomendado).
 
 ## Passo a Passo
 
 * Clone o repositório:
-``
+
+```text
 Bash
 
 git clone [https://github.com/seu-usuario/projeto-sigmaautomoveis.git](https://github.com/seu-usuario/projeto-sigmaautomoveis.git)
-``
+```
+
 * Abra a pasta no VS Code.
 
 * Inicie com Live Server:
@@ -102,4 +104,4 @@ em uma futura implementação Back-End.
 ## ✒️ Autor
 Desenvolvido por Junior Carvalho.
 
-### Este projeto é para fins educacionais e de portfólio.
+> **Este projeto é para fins educacionais e de portfólio.**
