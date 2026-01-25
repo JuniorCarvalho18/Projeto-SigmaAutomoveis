@@ -38,8 +38,11 @@ async function saveData(key, data) {
     }
 }
 
-// Inicializar dados de exemplo com imagens reais
+// Inicializar dados de exemplo com imagens reais - INSERIR PLACEHOLDERS
 async function inicializarDados() {
+    // Inserir placeholders visuais primeiro
+    inserirPlaceholders();
+    
     const veiculos = await getData('veiculos');
     if (veiculos.length === 0) {
         await saveData('veiculos', [
@@ -189,6 +192,115 @@ async function inicializarDados() {
     }
 
     await carregarTudo();
+}
+
+// Inserir placeholders visuais nos carrosséis
+function inserirPlaceholders() {
+    // Veículos
+    document.getElementById('veiculos-list').innerHTML = `
+        <div class="item elemento">
+            <img src="../assets/img/argo.jpeg" alt="Argo">
+            <strong>Fiat Argo</strong>
+            <p>Placa: ABC-1234</p>
+            <p>Ano: 2024</p>
+            <p>Cor: Prata</p>
+        </div>
+        <div class="item elemento">
+            <img src="../assets/img/gol.jpeg" alt="Gol">
+            <strong>Volkswagen Gol</strong>
+            <p>Placa: XYZ-5678</p>
+            <p>Ano: 2023</p>
+            <p>Cor: Branco</p>
+        </div>
+    `;
+
+    // Compras
+    document.getElementById('compras-list').innerHTML = `
+        <div class="item elemento">
+            <img src="../assets/img/hb20.jpeg" alt="HB20">
+            <strong>Hyundai HB20</strong>
+            <p>End: J50</p>
+        </div>
+        <div class="item elemento">
+            <img src="../assets/img/ka.jpeg" alt="Ka">
+            <strong>Ford Ka</strong>
+            <p>End: F15</p>
+        </div>
+    `;
+
+    // Vendas
+    document.getElementById('vendas-list').innerHTML = `
+        <div class="item elemento">
+            <img src="../assets/img/papel.jpeg" alt="Venda">
+            <strong>Venda 3459</strong>
+            <p>CPF: 123456</p>
+            <p>End: H15</p>
+        </div>
+        <div class="item elemento">
+            <img src="../assets/img/papel.jpeg" alt="Venda">
+            <strong>Venda 3460</strong>
+            <p>CPF: 654321</p>
+            <p>End: P33</p>
+        </div>
+    `;
+
+    // Pedidos
+    document.getElementById('pedidos-list').innerHTML = `
+        <div class="item elemento">
+            <img src="../assets/img/papel.jpeg" alt="Pedido">
+            <strong>Pedido 1</strong>
+            <p>Valor: 15.000,15R$</p>
+            <p>End: 253</p>
+        </div>
+        <div class="item elemento">
+            <img src="../assets/img/papel.jpeg" alt="Pedido">
+            <strong>Pedido 2</strong>
+            <p>Valor: 25.000,33</p>
+            <p>End: 336</p>
+        </div>
+    `;
+
+    // Clientes
+    document.getElementById('clientes-list').innerHTML = `
+        <div class="item elemento">
+            <img src="../assets/img/cliente3.jpeg" alt="Cliente">
+            <strong>Roberto Lima</strong>
+            <p>CPF: 123456</p>
+        </div>
+        <div class="item elemento">
+            <img src="../assets/img/cliente4.jpeg" alt="Cliente">
+            <strong>Jailson da Silva</strong>
+            <p>CPF: 654321</p>
+        </div>
+    `;
+
+    // Vendedores
+    document.getElementById('vendedores-list').innerHTML = `
+        <div class="item elemento">
+            <img src="../assets/img/cliente1.jpeg" alt="Vendedor">
+            <strong>Vendedor 15</strong>
+            <p>Nome: Alberto Ribeiro</p>
+        </div>
+        <div class="item elemento">
+            <img src="../assets/img/cliente2.jpeg" alt="Vendedor">
+            <strong>Vendedor 10</strong>
+            <p>Nome: Joana D'arc</p>
+        </div>
+    `;
+
+    // Montadoras
+    document.getElementById('montadoras-list').innerHTML = `
+        <div class="item elemento">
+            <img src="../assets/img/hyundai.jpeg" alt="Hyundai">
+            <strong>Montadora 1</strong>
+            <p>Nome: Hyundai</p>
+        </div>
+        <div class="item elemento">
+            <img src="../assets/img/toyota.jpeg" alt="Toyota">
+            <strong>Montadora 2</strong>
+            <p>Nome: Toyota</p>
+        </div>
+    `;
 }
 
 // Carregar todos os dados

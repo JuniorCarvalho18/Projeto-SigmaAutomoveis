@@ -109,7 +109,10 @@ aside ul {
     list-style: none;
     padding: 0;
     margin: 0;
+    scroll-target-group: auto;
 }
+
+
 
 aside ul li {
     border-bottom: 1px solid #ddd;
@@ -119,6 +122,11 @@ aside ul li {
 aside ul li:hover {
     transform: translateX(5px);
     background-color: #e8e8e8;
+}
+
+aside ul li a:hover, aside ul li a:target-current {
+    color: #007bff;
+    transition: all 0.1s ease-in-out;
 }
 
 aside ul li a {
