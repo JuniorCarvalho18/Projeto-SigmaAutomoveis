@@ -421,8 +421,8 @@ function gerarFormulario(tipo) {
                 <input type="number" id="preco" step="0.01" min="0" required>
             </div>
             <div class="form-group">
-                <label>URL da Imagem</label>
-                <input type="text" id="imagem" placeholder="../assets/img/argo.jpeg">
+                <label>Imagem</label>
+                <input type="file" id="imagem" accept="image/*" onchange="handleImageUpload(event)">
             </div>
         `,
         compra: `
@@ -447,8 +447,8 @@ function gerarFormulario(tipo) {
                 <input type="text" id="endereco" required>
             </div>
             <div class="form-group">
-                <label>URL da Imagem</label>
-                <input type="text" id="imagem" placeholder="../assets/img/hb20.jpeg">
+                <label>Imagem</label>
+                <input type="file" id="imagem" accept="image/*" onchange="handleImageUpload(event)">
             </div>
         `,
         venda: `
@@ -473,8 +473,8 @@ function gerarFormulario(tipo) {
                 <input type="number" id="valor" step="0.01" min="0" required>
             </div>
             <div class="form-group">
-                <label>URL da Imagem</label>
-                <input type="text" id="imagem" placeholder="../assets/img/papel.jpeg">
+                <label>Imagem</label>
+                <input type="file" id="imagem" accept="image/*" onchange="handleImageUpload(event)">
             </div>
         `,
         pedido: `
@@ -491,8 +491,8 @@ function gerarFormulario(tipo) {
                 <input type="number" id="valor" step="0.01" min="0" required>
             </div>
             <div class="form-group">
-                <label>URL da Imagem</label>
-                <input type="text" id="imagem" placeholder="../assets/img/papel.jpeg">
+                <label>Imagem</label>
+                <input type="file" id="imagem" accept="image/*" onchange="handleImageUpload(event)">
             </div>
         `,
         cliente: `
@@ -505,8 +505,8 @@ function gerarFormulario(tipo) {
                 <input type="text" id="cpf" maxlength="11" required>
             </div>
             <div class="form-group">
-                <label>URL da Imagem</label>
-                <input type="text" id="imagem" placeholder="../assets/img/cliente3.jpeg">
+                <label>Imagem</label>
+                <input type="file" id="imagem" accept="image/*" onchange="handleImageUpload(event)">
             </div>
         `,
         vendedor: `
@@ -515,8 +515,8 @@ function gerarFormulario(tipo) {
                 <input type="text" id="nome" required>
             </div>
             <div class="form-group">
-                <label>URL da Imagem</label>
-                <input type="text" id="imagem" placeholder="../assets/img/cliente1.jpeg">
+                <label>Imagem</label>
+                <input type="file" id="imagem" accept="image/*" onchange="handleImageUpload(event)">
             </div>
         `,
         montadora: `
@@ -525,8 +525,8 @@ function gerarFormulario(tipo) {
                 <input type="text" id="nome" required>
             </div>
             <div class="form-group">
-                <label>URL da Imagem</label>
-                <input type="text" id="imagem" placeholder="../assets/img/hyundai.jpeg">
+                <label>Imagem</label>
+                <input type="file" id="imagem" accept="image/*" onchange="handleImageUpload(event)">
             </div>
         `
     };
@@ -536,6 +536,7 @@ function gerarFormulario(tipo) {
     return `
         <form onsubmit="salvarFormulario(event)">
             ${formularios[tipo]}
+            <input type="hidden" id="imagemData">
             <div class="form-buttons">
                 <button type="button" class="btn-cancel" onclick="fecharModal()">Cancelar</button>
                 ${deleteBtn}
@@ -543,6 +544,18 @@ function gerarFormulario(tipo) {
             </div>
         </form>
     `;
+}
+
+// Manipular upload de imagem
+function handleImageUpload(event) {
+    const file = event.target.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            document.getElementById('imagemData').value = e.target.result;
+        };
+        reader.readAsDataURL(file);
+    }
 }
 
 // Preencher formulário para edição
@@ -555,7 +568,15 @@ async function preencherFormulario(tipo, id) {
     Object.keys(item).forEach(key => {
         const input = document.getElementById(key);
         if (input && key !== 'id') {
-            input.value = item[key];
+            if (key === 'imagem') {
+                // Para imagens, armazenar no campo oculto
+                const imagemData = document.getElementById('imagemData');
+                if (imagemData) {
+                    imagemData.value = item[key];
+                }
+            } else {
+                input.value = item[key];
+            }
         }
     });
 }
@@ -568,9 +589,15 @@ async function salvarFormulario(event) {
 
     // Coletar dados do formulário
     for (let input of form.querySelectorAll('input, select')) {
-        if (input.id) {
+        if (input.id && input.type !== 'file') {
             data[input.id] = input.value;
         }
+    }
+
+    // Adicionar imagem se foi carregada
+    const imagemData = document.getElementById('imagemData');
+    if (imagemData && imagemData.value) {
+        data.imagem = imagemData.value;
     }
 
     const key = currentSection + 's';
