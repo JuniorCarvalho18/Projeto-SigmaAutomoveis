@@ -61,6 +61,7 @@ projeto-sigmaautomoveis/
 ├── index.html               # Página de Login
 ├── sbase.sql                # (Referência) Estrutura do banco de dados SQL original
 └── README.md                # Documentação do projeto
+```
 
 ⚙️ Como Rodar o Projeto
 Como o projeto utiliza LocalStorage e caminhos relativos, recomenda-se rodar através de um servidor local simples para evitar bloqueios de segurança do navegador (CORS).
@@ -91,7 +92,10 @@ Login:
 Na tela de login, você pode inserir qualquer e-mail/senha para entrar (simulação) ou clicar em "Cadastre-se".
 
 🗄️ Sobre o Banco de Dados (SQL)
-O arquivo sbase.sql incluído no projeto serve como documentação da estrutura de dados. Embora a versão atual rode inteiramente no navegador via LocalStorage para facilidade de demonstração em portfólio, a estrutura foi pensada para ser compatível com um banco de dados MySQL/MariaDB em uma futura implementação Back-End.
+O arquivo sbase.sql incluído no projeto serve como documentação da estrutura de dados. Embora 
+a versão atual rode inteiramente no navegador via LocalStorage para facilidade de demonstração 
+em portfólio, a estrutura foi pensada para ser compatível com um banco de dados MySQL/MariaDB 
+em uma futura implementação Back-End.
 
 ✒️ Autor
 Desenvolvido por Junior Carvalho.
