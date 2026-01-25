@@ -65,13 +65,30 @@ aside {
     width: 250px;
     background-color: #f0f0f0;
     border-right: 1px solid #ddd;
-    overflow-y: auto;
-    transition: transform 0.3s ease;
+    overflow-y: hidden;
+    transition: width 0.3s ease, transform 0.3s ease;
     z-index: 999;
 }
 
 aside.collapsed {
-    transform: translateX(-190px);
+    width: 60px;
+}
+
+aside.collapsed #logobar {
+    display: none;
+}
+
+aside.collapsed ul li a p {
+    display: none;
+}
+
+aside.collapsed ul li a {
+    justify-content: center;
+    padding: 15px 0;
+}
+
+aside.collapsed ul li a i {
+    margin-right: 0;
 }
 
 #logobar {
@@ -452,6 +469,33 @@ section:hover {
     font-size: 16px;
 }
 
+/* Layout do Formulário no Modal */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Divide em 2 colunas iguais */
+    gap: 15px; /* Espaço entre as colunas */
+}
+
+/* Título dentro do form */
+.form-title {
+    grid-column: 1 / -1; /* Título ocupa toda a largura */
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Campos que devem ocupar a linha inteira (como a imagem ou botões) */
+.full-width, .form-buttons {
+    grid-column: 1 / -1;
+}
+
+/* Responsividade para celular: volta para 1 coluna */
+@media (max-width: 600px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* Responsive */
 @media screen and (max-width: 1060px) {
     aside {
@@ -460,6 +504,7 @@ section:hover {
 
     aside.collapsed {
         transform: translateX(0);
+        width: 250px;
     }
 
     main {
@@ -483,9 +528,18 @@ section:hover {
         display: none;
     }
 
-    aside.collapsed #logobar h2,
-    aside.collapsed aside ul li p {
+    aside.collapsed #logobar {
         display: block;
+    }
+    aside.collapsed ul li a p {
+        display: block;
+    }
+    aside.collapsed ul li a {
+        justify-content: flex-start;
+        padding: 15px 20px;
+    }
+    aside.collapsed ul li a i {
+        margin-right: 10px;
     }
 }
 
