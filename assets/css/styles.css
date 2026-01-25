@@ -193,7 +193,7 @@ section {
     scroll-margin-top: 40vh;
 }
 
-section:hover {
+section:hover, .auth-box:hover {
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
     transform: translateY(-5px);
 }
