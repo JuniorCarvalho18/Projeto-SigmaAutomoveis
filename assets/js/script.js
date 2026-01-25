@@ -176,6 +176,13 @@ function inserirPlaceholders() {
     `;
 }
 
+function getMediaHtml(imagem, iconName) {
+    if (imagem && imagem.trim() !== '') {
+        return `<img src="${imagem}" alt="Item">`;
+    }
+    return `<div class="icon-placeholder"><i class="material-icons">${iconName}</i></div>`;
+}
+
 // Carregar todos os dados
 async function carregarTudo() {
     await carregarVeiculos();
@@ -190,146 +197,73 @@ async function carregarTudo() {
 // Veículos
 async function carregarVeiculos() {
     const veiculos = await getData('veiculos');
-    const container = document.getElementById('veiculos-list');
-    
-    if (veiculos.length === 0) {
-        container.innerHTML = '<div class="empty-state">Nenhum veículo cadastrado</div>';
-        return;
-    }
-
-    container.innerHTML = veiculos.map(v => `
-        <div class="item" onclick="editarItem('veiculo', ${v.id})">
-            <img src="${v.imagem || '../assets/img/argo.jpeg'}" alt="${v.modelo}">
-            <strong>${v.marca} ${v.modelo}</strong>
-            <p>Placa: ${v.placa}</p>
-            <p>Ano: ${v.anoModelo}</p>
-            <p>Cor: ${v.cor}</p>
-            <p style="color: #28a745; font-weight: bold;">R$ ${parseFloat(v.preco).toLocaleString('pt-BR', {minimumFractionDigits: 2})}</p>
-        </div>
-    `).join('');
+    renderizarLista('veiculos-list', veiculos, 'veiculo', v => `
+        ${getMediaHtml(v.imagem, 'directions_car')}
+        <strong>${v.marca} ${v.modelo}</strong>
+        <p>Placa: ${v.placa}</p>
+        <p>Ano: ${v.anoModelo}</p>
+        <p>Cor: ${v.cor}</p>
+        <p style="color: #28a745; font-weight: bold;">R$ ${parseFloat(v.preco).toLocaleString('pt-BR', {minimumFractionDigits: 2})}</p>
+    `);
 }
 
 // Compras
 async function carregarCompras() {
     const compras = await getData('compras');
-    const container = document.getElementById('compras-list');
-    
-    if (compras.length === 0) {
-        container.innerHTML = '<div class="empty-state">Nenhuma compra cadastrada</div>';
-        return;
-    }
-
-    container.innerHTML = compras.map(c => `
-        <div class="item" onclick="editarItem('compra', ${c.id})">
-            <img src="${c.imagem || '../assets/img/hb20.jpeg'}" alt="${c.produto}">
-            <strong>${c.produto}</strong>
-            <p>Qtd: ${c.quantidade}</p>
-            <p>Fornecedor: ${c.fornecedor}</p>
-            <p>End: ${c.endereco}</p>
-            <p style="color: #28a745; font-weight: bold;">R$ ${parseFloat(c.preco).toLocaleString('pt-BR', {minimumFractionDigits: 2})}</p>
-        </div>
-    `).join('');
+    renderizarLista('compras-list', compras, 'compra', c => `
+        ${getMediaHtml(c.imagem, 'shopping_cart')}
+        <strong>${c.produto}</strong>
+        <p>Qtd: ${c.quantidade}</p>
+        <p>Forn: ${c.fornecedor}</p>
+        <p style="color: #28a745; font-weight: bold;">R$ ${parseFloat(c.preco).toLocaleString('pt-BR', {minimumFractionDigits: 2})}</p>
+    `);
 }
 
-// Vendas
 async function carregarVendas() {
     const vendas = await getData('vendas');
-    const container = document.getElementById('vendas-list');
-    
-    if (vendas.length === 0) {
-        container.innerHTML = '<div class="empty-state">Nenhuma venda cadastrada</div>';
-        return;
-    }
-
-    container.innerHTML = vendas.map(v => `
-        <div class="item" onclick="editarItem('venda', ${v.id})">
-            <img src="${v.imagem || '../assets/img/papel.jpeg'}" alt="Venda">
-            <strong>Venda #${v.id}</strong>
-            <p>Cliente: ${v.nomeCliente}</p>
-            <p>CPF: ${v.cpfCliente ? v.cpfCliente.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4') : 'N/A'}</p>
-            <p>Vendedor: ${v.nomeVendedor}</p>
-            <p>End: ${v.endereco}</p>
-            <p style="color: #28a745; font-weight: bold;">R$ ${parseFloat(v.valor).toLocaleString('pt-BR', {minimumFractionDigits: 2})}</p>
-        </div>
-    `).join('');
+    renderizarLista('vendas-list', vendas, 'venda', v => `
+        ${getMediaHtml(v.imagem, 'paid')}
+        <strong>Venda #${v.id}</strong>
+        <p>Cliente: ${v.nomeCliente}</p>
+        <p style="color: #28a745; font-weight: bold;">R$ ${parseFloat(v.valor).toLocaleString('pt-BR', {minimumFractionDigits: 2})}</p>
+    `);
 }
 
-// Pedidos
 async function carregarPedidos() {
     const pedidos = await getData('pedidos');
-    const container = document.getElementById('pedidos-list');
-    
-    if (pedidos.length === 0) {
-        container.innerHTML = '<div class="empty-state">Nenhum pedido cadastrado</div>';
-        return;
-    }
-
-    container.innerHTML = pedidos.map(p => `
-        <div class="item" onclick="editarItem('pedido', ${p.id})">
-            <img src="${p.imagem || '../assets/img/papel.jpeg'}" alt="Pedido">
-            <strong>Pedido #${p.id}</strong>
-            <p>Produto: ${p.produto}</p>
-            <p>End: ${p.endereco}</p>
-            <p style="color: #28a745; font-weight: bold;">R$ ${parseFloat(p.valor).toLocaleString('pt-BR', {minimumFractionDigits: 2})}</p>
-        </div>
-    `).join('');
+    renderizarLista('pedidos-list', pedidos, 'pedido', p => `
+        ${getMediaHtml(p.imagem, 'local_shipping')}
+        <strong>Pedido #${p.id}</strong>
+        <p>Produto: ${p.produto}</p>
+        <p style="color: #28a745; font-weight: bold;">R$ ${parseFloat(p.valor).toLocaleString('pt-BR', {minimumFractionDigits: 2})}</p>
+    `);
 }
 
-// Clientes
 async function carregarClientes() {
     const clientes = await getData('clientes');
-    const container = document.getElementById('clientes-list');
-    
-    if (clientes.length === 0) {
-        container.innerHTML = '<div class="empty-state">Nenhum cliente cadastrado</div>';
-        return;
-    }
-
-    container.innerHTML = clientes.map(c => `
-        <div class="item" onclick="editarItem('cliente', ${c.id})">
-            <img src="${c.imagem || '../assets/img/cliente3.jpeg'}" alt="${c.nome}">
-            <strong>${c.nome}</strong>
-            <p>CPF: ${c.cpf.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4')}</p>
-        </div>
-    `).join('');
+    renderizarLista('clientes-list', clientes, 'cliente', c => `
+        ${getMediaHtml(c.imagem, 'people')}
+        <strong>${c.nome}</strong>
+        <p>CPF: ${c.cpf}</p>
+    `);
 }
 
-// Vendedores
 async function carregarVendedores() {
     const vendedores = await getData('vendedores');
-    const container = document.getElementById('vendedores-list');
-    
-    if (vendedores.length === 0) {
-        container.innerHTML = '<div class="empty-state">Nenhum vendedor cadastrado</div>';
-        return;
-    }
-
-    container.innerHTML = vendedores.map(v => `
-        <div class="item" onclick="editarItem('vendedor', ${v.id})">
-            <img src="${v.imagem || '../assets/img/cliente1.jpeg'}" alt="${v.nome}">
-            <strong>${v.nome}</strong>
-            <p>ID: ${v.id}</p>
-        </div>
-    `).join('');
+    renderizarLista('vendedores-list', vendedores, 'vendedor', v => `
+        ${getMediaHtml(v.imagem, 'assignment_ind')}
+        <strong>${v.nome}</strong>
+        <p>ID: ${v.id}</p>
+    `);
 }
 
-// Montadoras
 async function carregarMontadoras() {
     const montadoras = await getData('montadoras');
-    const container = document.getElementById('montadoras-list');
-    
-    if (montadoras.length === 0) {
-        container.innerHTML = '<div class="empty-state">Nenhuma montadora cadastrada</div>';
-        return;
-    }
-
-    container.innerHTML = montadoras.map(m => `
-        <div class="item" onclick="editarItem('montadora', ${m.id})">
-            <img src="${m.imagem || '../assets/img/hyundai.jpeg'}" alt="${m.nome}">
-            <strong>${m.nome}</strong>
-            <p>ID: ${m.id}</p>
-        </div>
-    `).join('');
+    renderizarLista('montadoras-list', montadoras, 'montadora', m => `
+        ${getMediaHtml(m.imagem, 'factory')}
+        <strong>${m.nome}</strong>
+        <p>ID: ${m.id}</p>
+    `);
 }
 
 function renderizarLista(elementId, dados, tipo, templateFunc) {
@@ -378,168 +312,76 @@ function getTipoNome(tipo) {
 }
 
 // Gerar formulários
+// Gerar formulários
 function gerarFormulario(tipo, id) {
     const titulo = id ? `Editar ${getTipoNome(tipo)}` : `Adicionar ${getTipoNome(tipo)}`;
+    
+    // Inputs específicos de cada tipo
     const campos = {
         veiculo: `
-            <div class="form-group">
-                <label>Chassi *</label>
-                <input type="text" id="nchassi" required>
-            </div>
-            <div class="form-group">
-                <label>Placa *</label>
-                <input type="text" id="placa" required>
-            </div>
-            <div class="form-group">
-                <label>Marca *</label>
-                <input type="text" id="marca" required>
-            </div>
-            <div class="form-group">
-                <label>Modelo *</label>
-                <input type="text" id="modelo" required>
-            </div>
-            <div class="form-group">
-                <label>Ano de Fabricação *</label>
-                <input type="number" id="anoFabricacao" min="1900" max="2030" required>
-            </div>
-            <div class="form-group">
-                <label>Ano do Modelo *</label>
-                <input type="number" id="anoModelo" min="1900" max="2030" required>
-            </div>
-            <div class="form-group">
-                <label>Cor *</label>
-                <input type="text" id="cor" required>
-            </div>
-            <div class="form-group">
-                <label>Preço (R$) *</label>
-                <input type="number" id="preco" step="0.01" min="0" required>
-            </div>
-            <div class="form-group">
-                <label>Imagem</label>
-                <input type="file" id="imagem" accept="image/*" onchange="handleImageUpload(event)">
-            </div>
+            <div class="form-group"><label>Chassi *</label><input type="text" id="nchassi" required></div>
+            <div class="form-group"><label>Placa *</label><input type="text" id="placa" required></div>
+            <div class="form-group"><label>Marca *</label><input type="text" id="marca" required></div>
+            <div class="form-group"><label>Modelo *</label><input type="text" id="modelo" required></div>
+            <div class="form-group"><label>Ano Fab. *</label><input type="number" id="anoFabricacao" required></div>
+            <div class="form-group"><label>Ano Mod. *</label><input type="number" id="anoModelo" required></div>
+            <div class="form-group"><label>Cor *</label><input type="text" id="cor" required></div>
+            <div class="form-group"><label>Preço (R$) *</label><input type="number" id="preco" step="0.01" required></div>
         `,
         compra: `
-            <div class="form-group">
-                <label>Produto *</label>
-                <input type="text" id="produto" required>
-            </div>
-            <div class="form-group">
-                <label>Quantidade *</label>
-                <input type="number" id="quantidade" min="1" required>
-            </div>
-            <div class="form-group">
-                <label>Preço (R$) *</label>
-                <input type="number" id="preco" step="0.01" min="0" required>
-            </div>
-            <div class="form-group">
-                <label>Fornecedor *</label>
-                <input type="text" id="fornecedor" required>
-            </div>
-            <div class="form-group">
-                <label>Endereço *</label>
-                <input type="text" id="endereco" required>
-            </div>
-            <div class="form-group">
-                <label>Imagem</label>
-                <input type="file" id="imagem" accept="image/*" onchange="handleImageUpload(event)">
-            </div>
+            <div class="form-group"><label>Produto *</label><input type="text" id="produto" required></div>
+            <div class="form-group"><label>Quantidade *</label><input type="number" id="quantidade" required></div>
+            <div class="form-group"><label>Preço *</label><input type="number" id="preco" step="0.01" required></div>
+            <div class="form-group"><label>Fornecedor *</label><input type="text" id="fornecedor" required></div>
+            <div class="form-group"><label>Endereço *</label><input type="text" id="endereco" required></div>
         `,
         venda: `
-            <div class="form-group">
-                <label>Nome do Cliente *</label>
-                <input type="text" id="nomeCliente" required>
-            </div>
-            <div class="form-group">
-                <label>CPF do Cliente *</label>
-                <input type="text" id="cpfCliente" maxlength="11" required>
-            </div>
-            <div class="form-group">
-                <label>Nome do Vendedor *</label>
-                <input type="text" id="nomeVendedor" required>
-            </div>
-            <div class="form-group">
-                <label>Endereço *</label>
-                <input type="text" id="endereco" required>
-            </div>
-            <div class="form-group">
-                <label>Valor (R$) *</label>
-                <input type="number" id="valor" step="0.01" min="0" required>
-            </div>
-            <div class="form-group">
-                <label>Imagem</label>
-                <input type="file" id="imagem" accept="image/*" onchange="handleImageUpload(event)">
-            </div>
+            <div class="form-group"><label>Nome Cliente *</label><input type="text" id="nomeCliente" required></div>
+            <div class="form-group"><label>CPF Cliente *</label><input type="text" id="cpfCliente" required></div>
+            <div class="form-group"><label>Vendedor *</label><input type="text" id="nomeVendedor" required></div>
+            <div class="form-group"><label>Endereço *</label><input type="text" id="endereco" required></div>
+            <div class="form-group"><label>Valor *</label><input type="number" id="valor" step="0.01" required></div>
         `,
         pedido: `
-            <div class="form-group">
-                <label>Produto *</label>
-                <input type="text" id="produto" required>
-            </div>
-            <div class="form-group">
-                <label>Endereço *</label>
-                <input type="text" id="endereco" required>
-            </div>
-            <div class="form-group">
-                <label>Valor (R$) *</label>
-                <input type="number" id="valor" step="0.01" min="0" required>
-            </div>
-            <div class="form-group">
-                <label>Imagem</label>
-                <input type="file" id="imagem" accept="image/*" onchange="handleImageUpload(event)">
-            </div>
+            <div class="form-group"><label>Produto *</label><input type="text" id="produto" required></div>
+            <div class="form-group"><label>Valor *</label><input type="number" id="valor" step="0.01" required></div>
+            <div class="form-group"><label>Endereço *</label><input type="text" id="endereco" required></div>
         `,
         cliente: `
-            <div class="form-group">
-                <label>Nome *</label>
-                <input type="text" id="nome" required>
-            </div>
-            <div class="form-group">
-                <label>CPF (apenas números) *</label>
-                <input type="text" id="cpf" maxlength="11" required>
-            </div>
-            <div class="form-group">
-                <label>Imagem</label>
-                <input type="file" id="imagem" accept="image/*" onchange="handleImageUpload(event)">
-            </div>
+            <div class="form-group"><label>Nome *</label><input type="text" id="nome" required></div>
+            <div class="form-group"><label>CPF *</label><input type="text" id="cpf" required></div>
         `,
         vendedor: `
-            <div class="form-group">
-                <label>Nome *</label>
-                <input type="text" id="nome" required>
-            </div>
-            <div class="form-group">
-                <label>Imagem</label>
-                <input type="file" id="imagem" accept="image/*" onchange="handleImageUpload(event)">
-            </div>
+            <div class="form-group"><label>Nome *</label><input type="text" id="nome" required></div>
         `,
         montadora: `
-            <div class="form-group">
-                <label>Nome *</label>
-                <input type="text" id="nome" required>
-            </div>
-            <div class="form-group">
-                <label>Imagem</label>
-                <input type="file" id="imagem" accept="image/*" onchange="handleImageUpload(event)">
-            </div>
-        `
+            <div class="form-group"><label>Nome *</label><input type="text" id="nome" required></div>
+        `,
+        default: `<div class="form-group"><label>Nome *</label><input type="text" id="nome" required></div>`
     };
 
     const inputs = campos[tipo] || campos['default'];
     const deleteBtn = editingId ? '<button type="button" class="btn-delete" onclick="deletarItem()">Excluir</button>' : '';
 
-return `
+    // CORREÇÃO AQUI: 
+    // 1. Removemos a classe 'full-width' e o style manual.
+    // 2. Definimos o input de imagem.
+    const imageInput = `
+        <div class="form-group">
+            <label>Imagem</label>
+            <input type="file" id="imagem" accept="image/*" onchange="handleImageUpload(event)">
+        </div>
+    `;
+
+    return `
         <form onsubmit="salvarFormulario(event)" class="modal-form-content">
             <h2 class="form-title">${titulo}</h2>
             
             <div class="form-grid">
                 ${inputs}
+                ${imageInput}
             </div>
 
-            <div class="form-group full-width" style="margin-top: 15px;">
-                <label>Imagem</label>
-                <input type="file" id="imagem" accept="image/*" onchange="handleImageUpload(event)">
-            </div>
             <input type="hidden" id="imagemData">
 
             <div class="form-buttons">

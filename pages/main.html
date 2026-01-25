@@ -10,13 +10,11 @@
 </head>
 
 <body>
-    <!-- Barra superior -->
     <header>
         <i id="burguer" class="material-icons" onclick="toggleSidebar()">menu</i>
         <input type="search" id="searchInput" placeholder="Pesquisar..." onkeyup="filtrarItens()">
     </header>
     
-    <!-- Barra lateral -->
     <aside id="sidebar">
         <div id="logobar">
             <img src="../assets/img/logo.jpeg" alt="Logo Rede Sigma">
@@ -33,9 +31,7 @@
         </ul>
     </aside>
 
-    <!-- Conteúdo principal -->
     <main id="mainContent">
-        <!-- Veículos -->
         <section id="controle-veiculos">
             <div class="section-left">
                 <h2>Controle de Veículos</h2>
@@ -44,12 +40,9 @@
                     <button class="btn btn-primary elemento" onclick="abrirModal('veiculo')">Adicionar Veículos</button>
                 </div>
             </div>
-            <div class="section-right">
-                <div id="veiculos-list" class="carousel"></div>
-            </div>
+            <div id="veiculos-list" class="section-right carousel"></div>
         </section>
 
-        <!-- Compras -->
         <section id="controle-compras">
             <div class="section-left">
                 <h2>Controle de Compras</h2>
@@ -58,12 +51,9 @@
                     <button class="btn btn-primary elemento" onclick="abrirModal('compra')">Adicionar Compra</button>
                 </div>
             </div>
-            <div class="section-right">
-                <div id="compras-list" class="carousel"></div>
-            </div>
+            <div id="compras-list" class="section-right carousel"></div>
         </section>
 
-        <!-- Vendas -->
         <section id="controle-vendas">
             <div class="section-left">
                 <h2>Controle de Vendas</h2>
@@ -72,12 +62,9 @@
                     <button class="btn btn-primary elemento" onclick="abrirModal('venda')">Adicionar Venda</button>
                 </div>
             </div>
-            <div class="section-right">
-                <div id="vendas-list" class="carousel"></div>
-            </div>
+            <div id="vendas-list" class="section-right carousel"></div>
         </section>
 
-        <!-- Pedidos -->
         <section id="controle-pedidos">
             <div class="section-left">
                 <h2>Controle de Pedidos</h2>
@@ -86,12 +73,9 @@
                     <button class="btn btn-primary elemento" onclick="abrirModal('pedido')">Adicionar Pedido</button>
                 </div>
             </div>
-            <div class="section-right">
-                <div id="pedidos-list" class="carousel"></div>
-            </div>
+            <div id="pedidos-list" class="section-right carousel"></div>
         </section>
 
-        <!-- Clientes -->
         <section id="controle-clientes">
             <div class="section-left">
                 <h2>Controle de Clientes</h2>
@@ -100,12 +84,9 @@
                     <button class="btn btn-primary elemento" onclick="abrirModal('cliente')">Adicionar Cliente</button>
                 </div>
             </div>
-            <div class="section-right">
-                <div id="clientes-list" class="carousel"></div>
-            </div>
+            <div id="clientes-list" class="section-right carousel"></div>
         </section>
 
-        <!-- Vendedores -->
         <section id="controle-vendedores">
             <div class="section-left">
                 <h2>Controle de Vendedores</h2>
@@ -114,12 +95,9 @@
                     <button class="btn btn-primary elemento" onclick="abrirModal('vendedor')">Adicionar Vendedor</button>
                 </div>
             </div>
-            <div class="section-right">
-                <div id="vendedores-list" class="carousel"></div>
-            </div>
+            <div id="vendedores-list" class="section-right carousel"></div>
         </section>
 
-        <!-- Montadoras -->
         <section id="controle-montadoras">
             <div class="section-left">
                 <h2>Controle de Montadoras</h2>
@@ -128,13 +106,10 @@
                     <button class="btn btn-primary elemento" onclick="abrirModal('montadora')">Adicionar Montadora</button>
                 </div>
             </div>
-            <div class="section-right">
-                <div id="montadoras-list" class="carousel"></div>
-            </div>
+            <div id="montadoras-list" class="section-right carousel"></div>
         </section>
     </main>
 
-    <!-- Modal Universal -->
     <div id="modal" class="modal">
         <div class="modal-content">
             <h2 id="modal-title"></h2>
