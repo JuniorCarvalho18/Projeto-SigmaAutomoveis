@@ -63,41 +63,43 @@ projeto-sigmaautomoveis/
 └── README.md                # Documentação do projeto
 ```
 
-⚙️ Como Rodar o Projeto
+## ⚙️ Como Rodar o Projeto
 Como o projeto utiliza LocalStorage e caminhos relativos, recomenda-se rodar através de um servidor local simples para evitar bloqueios de segurança do navegador (CORS).
 
-Pré-requisitos
-Um navegador moderno (Chrome, Firefox, Edge).
+### Pré-requisitos
+* Um navegador moderno (Chrome, Firefox, Edge).
 
-Um editor de código (VS Code recomendado).
+* Um editor de código (VS Code recomendado).
 
-Passo a Passo
-Clone o repositório:
+## Passo a Passo
 
+* Clone o repositório:
+``
 Bash
 
 git clone [https://github.com/seu-usuario/projeto-sigmaautomoveis.git](https://github.com/seu-usuario/projeto-sigmaautomoveis.git)
-Abra a pasta no VS Code.
+``
+* Abra a pasta no VS Code.
 
-Inicie com Live Server:
+* Inicie com Live Server:
 
-Instale a extensão Live Server no VS Code.
+* Instale a extensão Live Server no VS Code.
 
-Clique com o botão direito no arquivo index.html.
+* Clique com o botão direito no arquivo index.html.
 
-Selecione "Open with Live Server".
+* Selecione "Open with Live Server".
 
-Login:
+* Login:
 
-Na tela de login, você pode inserir qualquer e-mail/senha para entrar (simulação) ou clicar em "Cadastre-se".
+* Na tela de login, você pode inserir qualquer e-mail/senha para entrar (simulação) ou clicar em "Cadastre-se".
 
-🗄️ Sobre o Banco de Dados (SQL)
+## 🗄️ Sobre o Banco de Dados (SQL)
 O arquivo sbase.sql incluído no projeto serve como documentação da estrutura de dados. Embora 
 a versão atual rode inteiramente no navegador via LocalStorage para facilidade de demonstração 
 em portfólio, a estrutura foi pensada para ser compatível com um banco de dados MySQL/MariaDB 
 em uma futura implementação Back-End.
 
-✒️ Autor
+## ✒️ Autor
 Desenvolvido por Junior Carvalho.
 
-Este projeto é para fins educacionais e de portfólio.
+### Este projeto é para fins educacionais e de portfólio.
