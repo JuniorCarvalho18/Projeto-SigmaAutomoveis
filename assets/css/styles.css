@@ -256,6 +256,7 @@ section:hover {
 
 .item {
     flex: 0 0 200px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
     background-color: #fafafa;
     border: 1px solid #e0e0e0;
     border-radius: 8px;
