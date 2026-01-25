@@ -102,6 +102,6 @@ em portfólio, a estrutura foi pensada para ser compatível com um banco de dado
 em uma futura implementação Back-End.
 
 ## ✒️ Autor
-Desenvolvido por Junior Carvalho.
+Desenvolvido por Team Froggers.
 
 > **Este projeto é para fins educacionais e de portfólio.**
